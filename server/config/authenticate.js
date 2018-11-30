@@ -22,7 +22,7 @@ function makeToken(user) {
   return jwt.sign(payload, secret, options);
 }
 
-const LocalStrategy = new LocalStrategy(function(username, password, done) {
+const localStrategy = new LocalStrategy(function(username, password, done) {
   User.findOne({ username }, function(error, user) {
     if (error) return done(error);
 
@@ -63,7 +63,7 @@ const jwtStrategy = new JwtStrategy(jwtOptions, function(payload, done) {
     });
 });
 
-passport.use(LocalStrategy);
+passport.use(localStrategy);
 passport.use(jwtStrategy);
 
 const authenticate = passport.authenticate('local', { session: false });

@@ -3,8 +3,11 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const server = express();
+
+require('dotenv').load();
 
 /*** Change for a .env */
 const port = 5000;
@@ -30,6 +33,7 @@ server.listen(port, () => {
 
 routes(server);
 
+server.use(bodyParser.json());
 server.use(express.json());
 server.use(helmet());
 server.use(morgan('dev'));
