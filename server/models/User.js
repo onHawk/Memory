@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const { ObjectId } = mongoose.Schema.Types;
 
@@ -21,12 +22,15 @@ const User = new mongoose.Schema({
     type: String,
     required: true,
   },
-  timestamps: true,
+  createdOn: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 User.pre('save', function(next) {
   if (this.password != null) {
-    bcrypt.hash(this.password, 24, (error, hashed) => {
+    bcrypt.hash(this.password, 14, (error, hashed) => {
       if (error) return next(error);
       this.password = hashed;
       next();
