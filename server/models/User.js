@@ -39,7 +39,7 @@ User.pre('save', function(next) {
 });
 
 User.methods.checkPassword = function(guess, callback) {
-  bcyrpt.compare(guess, this.password, (error, isValid) => {
+  bcrypt.compare(guess, this.password, (error, isValid) => {
     if (error) return callback(error);
     callback(null, isValid);
   });
