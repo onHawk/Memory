@@ -31,12 +31,12 @@ server.listen(port, () => {
   console.log(`=== Server running on ${port} ===`);
 });
 
-routes(server);
-
 server.use(bodyParser.json());
 server.use(express.json());
 server.use(helmet());
 server.use(morgan('dev'));
 server.use(cors());
+
+routes(server);
 
 module.exports = { server };
