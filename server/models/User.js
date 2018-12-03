@@ -26,6 +26,7 @@ const User = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  journals: [{ type: ObjectId, ref: 'Journal' }],
 });
 
 User.pre('save', function(next) {
