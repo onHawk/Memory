@@ -50,10 +50,11 @@ const jwtOptions = {
 };
 
 const jwtStrategy = new JwtStrategy(jwtOptions, function(payload, done) {
-  console.log(payload, 'jwt payload');
+  // console.log(payload, 'jwt payload');
 
   User.findById(payload.sub)
     .select('-password')
+    .populate('entries')
     .then(user => {
       if (user) done(null, user);
       else done(null, false);

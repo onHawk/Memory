@@ -9,6 +9,8 @@ const login = (req, res) => {
   const userToken = makeToken(tkn);
 
   User.findOne(_id)
+    .select('-password')
+    .populate('entries')
     .then(user => {
       res.json({ userToken, user });
     })
