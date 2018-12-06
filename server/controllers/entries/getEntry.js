@@ -21,4 +21,16 @@ const getEntry = (req, res) => {
     });
 };
 
-module.exports = { getEntries, getEntry };
+const entryByLabel = (req, res) => {
+  const { label } = req.query;
+
+  Entry.find({ label })
+    .then(entries => {
+      res.json(entries);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+};
+
+module.exports = { getEntries, getEntry, entryByLabel };

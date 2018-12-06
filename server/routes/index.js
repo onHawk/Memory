@@ -6,7 +6,11 @@ const { login } = require('../controllers/users/login');
 
 /**************** CRUD functions *************/
 const { createEntry } = require('../controllers/entries/addEntry');
-const { getEntries, getEntry } = require('../controllers/entries/getEntry');
+const {
+  getEntries,
+  getEntry,
+  entryByLabel,
+} = require('../controllers/entries/getEntry');
 /********************************************/
 
 module.exports = server => {
@@ -17,4 +21,5 @@ module.exports = server => {
 
   server.get('/api/my_entries', restricted, getEntries);
   server.get('/api/entry/:id', restricted, getEntry);
+  server.get('/api/group_entries', restricted, entryByLabel);
 };
