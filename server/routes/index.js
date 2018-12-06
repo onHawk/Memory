@@ -12,6 +12,8 @@ const {
   entryByLabel,
 } = require('../controllers/entries/getEntry');
 const { editEntry } = require('../controllers/entries/updateEntry');
+
+const { deleteEntry } = require('../controllers/entries/deleteEntry');
 /********************************************/
 
 module.exports = server => {
@@ -25,4 +27,6 @@ module.exports = server => {
   server.get('/api/group_entries', restricted, entryByLabel);
 
   server.put('/api/edit_entry/:id', restricted, editEntry);
+
+  server.delete('/api/delete_entry/:id', restricted, deleteEntry);
 };
