@@ -11,6 +11,7 @@ const {
   getEntry,
   entryByLabel,
 } = require('../controllers/entries/getEntry');
+const { editEntry } = require('../controllers/entries/updateEntry');
 /********************************************/
 
 module.exports = server => {
@@ -22,4 +23,6 @@ module.exports = server => {
   server.get('/api/my_entries', restricted, getEntries);
   server.get('/api/entry/:id', restricted, getEntry);
   server.get('/api/group_entries', restricted, entryByLabel);
+
+  server.put('/api/edit_entry/:id', restricted, editEntry);
 };
