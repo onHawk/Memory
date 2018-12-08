@@ -11,7 +11,7 @@ export const USER_ENTRIES = 'USER_ENTRIES';
 
 const token = localStorage.getItem('id');
 
-const HOST = process.env.HOST;
+const HOST = 'http://localhost:5000';
 
 export function authError(error) {
   if (error) {
@@ -60,7 +60,7 @@ export function login(credentials, history) {
         }`;
         dispatch({ type: 'USER_LOGIN', payload: res.data.user });
         dispatch({ type: 'USER_ENTRIES', payload: res.data.user.entries });
-        // history.push('/home');
+        history.push('/home');
       })
       .catch(err => {
         console.log('login error', err);
