@@ -64,7 +64,7 @@ export function login(credentials, history) {
       })
       .catch(err => {
         console.log('login error', err);
-        dispatch({ type: 'AUTH_ERROR', payload: 'Login error' });
+        dispatch({ type: 'AUTH_ERROR', payload: 'Wrong username/password' });
       });
   };
 }
