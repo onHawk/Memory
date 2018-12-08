@@ -6,6 +6,7 @@ import './sass/App.scss';
 
 import Landing from './components/Landing';
 import Login from './components/accounts/Login';
+import Register from './components/accounts/Register';
 
 import HomePage from './components/Home';
 
@@ -15,6 +16,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Landing} />
+          <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/home" component={HomePage} />
         </Switch>

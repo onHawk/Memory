@@ -35,7 +35,7 @@ export function register(info, history) {
       })
       .then(res => {
         localStorage.setItem('id', res.data.token);
-        // history.push('login')
+        history.push('/login');
       })
       .catch(err => {
         dispatch({
