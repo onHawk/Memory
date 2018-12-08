@@ -17,7 +17,7 @@ export function authError(error) {
   if (error) {
     return {
       type: 'AUTH_ERROR',
-      payload: error,
+      payload: 'Cant authenticate',
     };
   }
 
@@ -40,7 +40,7 @@ export function register(info, history) {
       .catch(err => {
         dispatch({
           type: 'AUTH_ERROR',
-          payload: err,
+          payload: 'Error registering',
         });
         console.log(err);
       });
@@ -64,7 +64,7 @@ export function login(credentials, history) {
       })
       .catch(err => {
         console.log('login error', err);
-        dispatch({ type: 'AUTH_ERROR', payload: err });
+        dispatch({ type: 'AUTH_ERROR', payload: 'Login error' });
       });
   };
 }
