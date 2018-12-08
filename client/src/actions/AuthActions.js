@@ -16,13 +16,13 @@ const HOST = process.env.HOST;
 export function authError(error) {
   if (error) {
     return {
-      type: AUTH_ERROR,
+      type: 'AUTH_ERROR',
       payload: error,
     };
   }
 
   return {
-    type: AUTH_SUCCESS,
+    type: 'AUTH_SUCCESS',
     payload: 'No error',
   };
 }
@@ -35,11 +35,11 @@ export function register(info, history) {
       })
       .then(res => {
         localStorage.setItem('id', res.data.token);
-        // history.push()
+        // history.push('login')
       })
       .catch(err => {
         dispatch({
-          type: AUTH_ERROR,
+          type: 'AUTH_ERROR',
           payload: err,
         });
         console.log(err);
@@ -58,20 +58,20 @@ export function login(credentials, history) {
         axios.defaults.headers.common.Authorization = `bearer token: ${
           res.data.token
         }`;
-        dispatch({ type: USER_LOGIN, payload: res.data.user });
-        dispatch({ type: USER_ENTRIES, payload: res.data.user.entries });
-        //history.push()
+        dispatch({ type: 'USER_LOGIN', payload: res.data.user });
+        dispatch({ type: 'USER_ENTRIES', payload: res.data.user.entries });
+        // history.push('/home');
       })
       .catch(err => {
         console.log('login error', err);
-        dispatch({ type: AUTH_ERROR, payload: err });
+        dispatch({ type: 'AUTH_ERROR', payload: err });
       });
   };
 }
 
 export function logout(history) {
   return dispatch => {
-    dispatch({ type: USER_LOGOUT, payload: 'Logged out' });
+    dispatch({ type: 'USER_LOGOUT', payload: 'Logged out' });
     localStorage.removeItem('id');
     history.push('/');
   };
