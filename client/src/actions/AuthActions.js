@@ -17,7 +17,7 @@ export function authError(error) {
   if (error) {
     return {
       type: 'AUTH_ERROR',
-      payload: 'Cant authenticate',
+      payload: error,
     };
   }
 
@@ -38,11 +38,12 @@ export function register(info, history) {
         history.push('/login');
       })
       .catch(err => {
-        dispatch({
-          type: 'AUTH_ERROR',
-          payload: 'Error registering',
-        });
-        console.log(err);
+        console.log(err.response);
+        if (err.response.data.message) {
+          dispatch(authError(err.response.data.message));
+        } else if (err.response.data.errmsg) {
+          dispatch(authError('email is already in use.'));
+        }
       });
   };
 }
