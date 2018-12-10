@@ -5,6 +5,7 @@ import {
   USER_ENTRIES,
   AUTH_ERROR,
   AUTH_SUCCESS,
+  LOGIN_ERROR,
 } from '../actions/AuthActions';
 
 const initialState = {
@@ -23,6 +24,8 @@ export default function(state = initialState, action) {
       return { ...state, message: action.payload };
     case AUTH_SUCCESS:
       return { ...state, success: action.payload };
+    case LOGIN_ERROR:
+      return { ...state, login_error: action.payload };
     default:
       return state;
   }

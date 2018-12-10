@@ -4,6 +4,8 @@ export const USER_REGISTERED = 'USER_REGISTERED';
 export const USER_LOGIN = 'USER_LOGIN';
 export const USER_LOGOUT = 'USER_LOGOUT';
 
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_ERROR = 'AUTH_ERROR';
 
@@ -65,7 +67,7 @@ export function login(credentials, history) {
       })
       .catch(err => {
         console.log('login error', err);
-        dispatch({ type: 'AUTH_ERROR', payload: 'Wrong username/password' });
+        dispatch({ type: 'LOGIN_ERROR', payload: 'Wrong username/password' });
       });
   };
 }
