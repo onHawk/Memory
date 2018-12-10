@@ -61,6 +61,7 @@ export function login(credentials, history) {
         axios.defaults.headers.common.Authorization = `bearer token: ${
           res.data.token
         }`;
+        console.log(res.data.user);
         dispatch({ type: 'USER_LOGIN', payload: res.data.user });
         dispatch({ type: 'USER_ENTRIES', payload: res.data.user.entries });
         history.push('/home');
