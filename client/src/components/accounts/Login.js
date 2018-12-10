@@ -14,6 +14,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        {this.props.error ? <h3>{this.props.error}</h3> : null}
         <Form onSubmit={values => this.handleSubmit(values)}>
           <label>username: </label>
           <Text field="username" />
@@ -21,7 +22,9 @@ class Login extends Component {
           <Text field="password" />
           <button type="submit">Submit</button>
         </Form>
-        {this.props.error ? <h3>{this.props.error}</h3> : null}
+        <Link to="/register">
+          <p>register</p>
+        </Link>
       </div>
     );
   }
