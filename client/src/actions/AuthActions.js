@@ -23,7 +23,7 @@ export function authError(error) {
 
   return {
     type: 'AUTH_SUCCESS',
-    payload: 'No error',
+    payload: 'Registered!',
   };
 }
 

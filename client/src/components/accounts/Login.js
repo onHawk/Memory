@@ -8,25 +8,28 @@ import { login } from '../../actions/AuthActions';
 
 class Login extends Component {
   handleSubmit(credentials) {
-    console.log(credentials);
+    // console.log(credentials);
     this.props.login(credentials, this.props.history);
   }
   render() {
     return (
-      <Form onSubmit={values => this.handleSubmit(values)}>
-        <label>username: </label>
-        <Text field="username" />
-        <label>password: </label>
-        <Text field="password" />
-        <button type="submit">Submit</button>
-      </Form>
+      <div>
+        <Form onSubmit={values => this.handleSubmit(values)}>
+          <label>username: </label>
+          <Text field="username" />
+          <label>password: </label>
+          <Text field="password" />
+          <button type="submit">Submit</button>
+        </Form>
+        <h3>{this.props.message}</h3>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    message: state.auth.message,
+    message: state.auth.success,
   };
 };
 export default connect(
