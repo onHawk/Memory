@@ -21,7 +21,7 @@ class Login extends Component {
           <Text field="password" />
           <button type="submit">Submit</button>
         </Form>
-        <h3>{this.props.message}</h3>
+        {this.props.error ? <h3>{this.props.error}</h3> : null}
       </div>
     );
   }
@@ -29,7 +29,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-    message: state.auth.success,
+    success: state.auth.success,
+    error: state.auth.login_error,
   };
 };
 export default connect(
