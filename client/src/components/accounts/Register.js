@@ -58,7 +58,7 @@ class Register extends Component {
                 validateOnChange
                 notify={['password']}
               />
-              {/* <code>{console.log(formState.errors)}</code> */}
+              
               <button type="submit">Submit</button>
               <Validate errors={formState.errors} />
               <h3>{this.props.message}</h3>
