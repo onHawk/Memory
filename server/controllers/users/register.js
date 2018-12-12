@@ -9,17 +9,16 @@ const register = (req, res) => {
     res.status(401).json({ message: 'Something is missing.' });
   }
 
-  console.log('New User: ', req.body);
-
-  const user = new User({ email, username, password, fullname });
-
   User.findOne({ username }).then(response => {
     if (response) {
+      console.log(response);
       res.status(422).json({ message: 'User exists already' });
     } else {
+      const user = new User(req.body);
       user
         .save()
         .then(registered => {
+          console.log('New User: ', registered);
           const token = makeToken(registered);
 
           res.json({ token });
