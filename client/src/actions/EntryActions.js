@@ -42,3 +42,19 @@ export function oneEntry(id) {
       });
   };
 }
+export function createEntry(entry, history) {
+  return dispatch => {
+    axios
+      .post(`${HOST}/api/create_page`, entry, {
+        headers: { Authorization: `bearer ${token}` },
+      })
+      .then(res => {
+        console.log(res.data);
+        dispatch({ type: 'CREATE_ENTRY', payload: res.data });
+        history.push('/home');
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
+  };
+}

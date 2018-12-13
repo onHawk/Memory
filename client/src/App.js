@@ -22,6 +22,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/home" component={HomePage} />
           <Route path="/entry/:id" component={FullView} />
+          <Route path="/create" component={Create} />
         </Switch>
       </Router>
     );

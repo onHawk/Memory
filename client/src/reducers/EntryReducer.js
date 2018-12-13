@@ -16,6 +16,8 @@ export default function(state = initialState, action) {
       return { ...state, entries: action.payload };
     case ENTRY:
       return { ...state, entry_view: action.payload };
+    case CREATE_ENTRY:
+      return { ...state, entry: action.payload };
     default:
       return state;
   }
