@@ -14,6 +14,8 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case ENTRIES:
       return { ...state, entries: action.payload };
+    case ENTRY:
+      return { ...state, entry_view: action.payload };
     default:
       return state;
   }

@@ -15,7 +15,7 @@ export function allEntries() {
   return dispatch => {
     axios
       .get(`${HOST}/api/my_entries`, {
-        headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
+        headers: { Authorization: `bearer ${token}` },
       })
       .then(res => {
         console.log(res);
@@ -23,6 +23,22 @@ export function allEntries() {
       })
       .catch(err => {
         console.log('error', err);
+      });
+  };
+}
+
+export function oneEntry(id) {
+  return dispatch => {
+    axios
+      .get(`${HOST}/api/entry/${id}`, {
+        headers: { Authorization: `bearer ${token}` },
+      })
+      .then(res => {
+        console.log(res);
+        dispatch({ type: 'ENTRY', payload: res.data });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 }
