@@ -23,11 +23,16 @@ class HomePage extends Component {
         <p onClick={() => this.props.logout(this.props.history)}>Log out</p>
         {entries ? (
           entries.map((e, i) => {
-            return <Entries key={i} title={e.title} body={e.content} />;
+            return (
+              <Entries key={i} title={e.title} body={e.content} id={e._id} />
+            );
           })
         ) : (
           <p> loading</p>
         )}
+        {/* <Link>
+          <p>create</p>
+        </Link> */}
       </div>
     );
   }
