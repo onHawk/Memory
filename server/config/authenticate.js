@@ -1,3 +1,4 @@
+require('dotenv').load();
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const ExtractJwt = require('passport-jwt').ExtractJwt;
@@ -17,7 +18,7 @@ function makeToken(user) {
     username: user.username,
   };
 
-  const options = { expiresIn: '1h' };
+  const options = { expiresIn: '2h' };
 
   return jwt.sign(payload, secret, options);
 }
@@ -60,6 +61,7 @@ const jwtStrategy = new JwtStrategy(jwtOptions, function(payload, done) {
       else done(null, false);
     })
     .catch(err => {
+      // console.log(err);
       return done(err, false);
     });
 });
