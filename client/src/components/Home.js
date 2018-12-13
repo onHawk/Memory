@@ -30,9 +30,9 @@ class HomePage extends Component {
         ) : (
           <p> loading</p>
         )}
-        {/* <Link>
+        <Link to="/create">
           <p>create</p>
-        </Link> */}
+        </Link>
       </div>
     );
   }
