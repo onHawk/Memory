@@ -36,7 +36,7 @@ export function register(info, history) {
         headers: { Authorization: `bearer ${token}` },
       })
       .then(res => {
-        localStorage.setItem('id', res.data.token);
+        localStorage.setItem('id', res.data.userToken);
         history.push('/login');
       })
       .catch(err => {
@@ -57,7 +57,8 @@ export function login(credentials, history) {
         headers: { Authorization: `bearer ${token}` },
       })
       .then(res => {
-        localStorage.setItem('id', res.data.token);
+        // console.log(res.data);
+        localStorage.setItem('id', res.data.userToken);
         axios.defaults.headers.common.Authorization = `bearer token: ${
           res.data.token
         }`;
