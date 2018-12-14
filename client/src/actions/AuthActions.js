@@ -58,9 +58,8 @@ export function login(credentials, history) {
         headers: { Authorization: `bearer ${token}` },
       })
       .then(res => {
-        // console.log(res.data);
+        // console.log(res.data.userToken);
         localStorage.setItem('id', res.data.userToken);
-        console.log(token);
 
         dispatch({ type: 'USER_LOGIN', payload: res.data.user });
         dispatch({ type: 'USER_ENTRIES', payload: res.data.user.entries });
