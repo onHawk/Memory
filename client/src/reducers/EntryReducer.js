@@ -22,6 +22,8 @@ export default function(state = initialState, action) {
       const updated = state.entries.filter(e => e._id !== action.payload._id);
 
       return { ...state, entries: updated };
+    case EDIT_ENTRY:
+      return { ...state, entry: `edited ${action.payload}` };
     default:
       return state;
   }

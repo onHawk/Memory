@@ -78,3 +78,21 @@ export function deleteEntry(id, history) {
       });
   };
 }
+
+export function editEntry(entry, history) {
+  return (dispatch, getState) => {
+    // console.log(entry);
+    const id = getState().journal.entry_view._id;
+
+    axios
+      .put(`${HOST}/api/edit_entry/${id}`, entry, {
+        headers: { Authorization: `bearer ${token}` },
+      })
+      .then(res => {
+        console.log(res.data);
+        dispatch({ type: 'EDIT_ENTRY', payload: res.data });
+
+        history.push(`/entry/${id}`);
+      });
+  };
+}
