@@ -19,12 +19,16 @@ class FullView extends Component {
     return (
       <div>
         {entry ? (
-          <Entry
-            title={entry.title}
-            body={entry.content}
-            createdOn={entry.createdOn}
-            label={entry.label}
-          />
+          <div>
+            <Entry
+              id={entry._id}
+              title={entry.title}
+              body={entry.content}
+              createdOn={entry.createdOn}
+              label={entry.label}
+              history={this.props.history}
+            />
+          </div>
         ) : null}{' '}
       </div>
     );
