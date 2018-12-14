@@ -11,6 +11,7 @@ import Register from './components/accounts/Register';
 import HomePage from './components/Home';
 import FullView from './components/entries/FullView';
 import Create from './components/entries/Create';
+import Edit from './components/entries/Edit';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/home" component={HomePage} />
           <Route path="/entry/:id" component={FullView} />
           <Route path="/create" component={Create} />
+          <Route path="/edit/:id" component={Edit} />
         </Switch>
       </Router>
     );

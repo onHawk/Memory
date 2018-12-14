@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { oneEntry } from '../../actions/EntryActions';
 
 import Entry from './Entry';
+import Edit from './Edit';
 
 class FullView extends Component {
   componentWillMount() {
@@ -28,6 +30,7 @@ class FullView extends Component {
               label={entry.label}
               history={this.props.history}
             />
+            <Link to={`/edit/${entry._id}`}>edit</Link>
           </div>
         ) : null}{' '}
       </div>
