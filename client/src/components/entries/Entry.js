@@ -9,6 +9,7 @@ const Entry = props => {
     <div>
       <div onClick={() => props.deleteEntry(props.id, props.history)}>X</div>
       <p>{props.title}</p>
+      <p>{props.label}</p>
       <p>{props.body}</p>
     </div>
   );
