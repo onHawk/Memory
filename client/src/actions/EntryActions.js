@@ -60,3 +60,21 @@ export function createEntry(entry, history) {
       });
   };
 }
+
+export function deleteEntry(id, history) {
+  return dispatch => {
+    axios
+      .delete(`${HOST}/api/delete_entry/${id}`, {
+        headers: { Authorization: `bearer ${token}` },
+      })
+      .then(res => {
+        console.log(res.data);
+
+        dispatch({ type: 'DELTE_ENTRY', payload: res.data });
+        history.push('/home');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+}

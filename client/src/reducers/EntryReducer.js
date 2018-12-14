@@ -18,6 +18,10 @@ export default function(state = initialState, action) {
       return { ...state, entry_view: action.payload };
     case CREATE_ENTRY:
       return { ...state, entry: action.payload };
+    case DELETE_ENTRY:
+      const updated = state.entries.filter(e => e._id !== action.payload._id);
+
+      return { ...state, entries: updated };
     default:
       return state;
   }
