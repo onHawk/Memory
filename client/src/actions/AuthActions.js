@@ -41,6 +41,7 @@ export function register(info, history) {
       })
       .catch(err => {
         console.log(err.response);
+
         if (err.response.data.message) {
           dispatch(authError(err.response.data.message));
         } else if (err.response.data.errmsg) {
@@ -59,12 +60,11 @@ export function login(credentials, history) {
       .then(res => {
         // console.log(res.data);
         localStorage.setItem('id', res.data.userToken);
-        axios.defaults.headers.common.Authorization = `bearer token: ${
-          res.data.token
-        }`;
-        console.log(res.data.user);
+        console.log(token);
+
         dispatch({ type: 'USER_LOGIN', payload: res.data.user });
         dispatch({ type: 'USER_ENTRIES', payload: res.data.user.entries });
+
         history.push('/home');
       })
       .catch(err => {

@@ -18,7 +18,7 @@ export function allEntries() {
         headers: { Authorization: `bearer ${token}` },
       })
       .then(res => {
-        console.log(res);
+        // console.log(res);
         dispatch({ type: 'ENTRIES', payload: res.data });
       })
       .catch(err => {
@@ -35,6 +35,7 @@ export function oneEntry(id) {
       })
       .then(res => {
         console.log(res);
+
         dispatch({ type: 'ENTRY', payload: res.data });
       })
       .catch(err => {
@@ -50,6 +51,7 @@ export function createEntry(entry, history) {
       })
       .then(res => {
         console.log(res.data);
+
         dispatch({ type: 'CREATE_ENTRY', payload: res.data });
         history.push('/home');
       })
