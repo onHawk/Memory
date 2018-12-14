@@ -33,7 +33,7 @@ export function register(info, history) {
   return dispatch => {
     axios
       .post(`${HOST}/api/register`, info, {
-        headers: { Authorization: `bearer ${token}` },
+        headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
         localStorage.setItem('id', res.data.userToken);
@@ -55,7 +55,7 @@ export function login(credentials, history) {
   return dispatch => {
     axios
       .post(`${HOST}/api/login`, credentials, {
-        headers: { Authorization: `bearer ${token}` },
+        headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
         // console.log(res.data.userToken);
