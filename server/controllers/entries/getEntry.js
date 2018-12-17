@@ -4,7 +4,7 @@ const User = require('../../models/User');
 /*********GET all user's entries********/
 const getEntries = (req, res) => {
   const { entries } = req.user;
-  console.log('user', req.user);
+  // console.log('user', req.user);
   res.json(entries);
 };
 

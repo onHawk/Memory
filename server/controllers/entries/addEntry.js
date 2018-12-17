@@ -7,7 +7,7 @@ const createEntry = (req, res) => {
   const { _id } = req.user;
 
   const entry = new Entry({ title, content, label });
-  console.log('User data', req.user);
+  // console.log('User data', req.user);
 
   entry
     .save()
