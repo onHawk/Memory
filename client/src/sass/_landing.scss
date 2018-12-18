@@ -19,6 +19,11 @@
     font-size: 4.5rem;
     font-family: 'Alegreya Sans SC', sans-serif;
   }
+  h2 {
+    color: $accent;
+    font-size: 3rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
 }
 .auth_container {
   width: 300px;
@@ -44,6 +49,7 @@
   border: 1px solid grey;
   border-radius: 8px;
   font-family: 'Alegreya Sans SC', sans-serif;
+  outline: none;
   &:hover {
     background-color: $primary-color;
     color: $accent;

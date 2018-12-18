@@ -30,41 +30,75 @@ class Register extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="container">
+        <h2 style={{ margin: '0' }}>Register</h2>
         <Form onSubmit={values => this.handleSubmit(values)}>
           {({ formState }) => (
-            <div>
-              <label>Full Name</label>
-              <Text field="fullname" />
-
-              <label>username</label>
-              <Text field="username" />
-
-              <label>email</label>
-              <Text field="email" />
-
-              <label>password</label>
-              <Text
-                field="password"
-                validate={this.passwordValidation}
-                validateOnChange
-                notify={['confirmPassword']}
-              />
-
-              <label htmlFor="notify-confirm-password">Confirm password:</label>
-              <Text
-                field="confirmPassword"
-                validate={this.passwordValidation}
-                validateOnChange
-                notify={['password']}
-              />
-              
-              <button type="submit">Submit</button>
+            <div className="form">
               <Validate errors={formState.errors} />
+              <p style={{ padding: '5px' }}>
+                Password must be 8 characters long
+              </p>
+              <div className="form-fields">
+                <label>Full Name</label>
+                <Text field="fullname" placeholder="..." />
+              </div>
+
+              <div className="form-fields">
+                <label>username</label>
+                <Text field="username" placeholder="..." />
+              </div>
+
+              <div className="form-fields">
+                <label>email</label>
+                <Text field="email" placeholder="..." />
+              </div>
+
+              <div className="form-fields">
+                <label>password</label>
+                <Text
+                  placeholder="..."
+                  field="password"
+                  validate={this.passwordValidation}
+                  validateOnChange
+                  notify={['confirmPassword']}
+                />
+              </div>
+              <div className="form-fields">
+                <label htmlFor="notify-confirm-password">
+                  Confirm password:
+                </label>
+                <Text
+                  placeholder="..."
+                  field="confirmPassword"
+                  validate={this.passwordValidation}
+                  validateOnChange
+                  notify={['password']}
+                />
+              </div>
+
+              <button type="submit" className="form-button">
+                Sign Up
+              </button>
+
               <h3>{this.props.message}</h3>
             </div>
           )}
         </Form>
+        <span>
+          Already registered?
+          <Link
+            to="/login"
+            style={{
+              marginLeft: '1px',
+              textDecoration: 'none',
+              color: '#73c2fb',
+            }}
+          >
+            {' '}
+            Login
+          </Link>
+        </span>
       </div>
     );
   }
