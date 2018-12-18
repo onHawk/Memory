@@ -2,17 +2,22 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import Register from '../components/accounts/Register';
+
 const Landing = () => {
   return (
-    <div>
-      <h1>Welcome!</h1>
-      <h2>Whats crackin</h2>
-      <Link to="/login">
-        <p>Login</p>
-      </Link>
-      <Link to="/register">
-        <p>Register</p>
-      </Link>
+    <div className="container">
+      <h1>Welcome</h1>
+
+      <div className="auth_container">
+        <Link to="/login" className="auth">
+          Login
+        </Link>
+
+        <Link to="register" className="auth">
+          Register
+        </Link>
+      </div>
     </div>
   );
 };

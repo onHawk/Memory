@@ -1,0 +1,51 @@
+.container {
+  // width: 80%;
+  height: 89vh;
+  background-color: $paper;
+  // e0d3af
+  // faf7f0
+  // fff9e8
+  margin: auto;
+  padding: 3rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  // border-left: #73c2fb 5px solid;
+
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.22);
+  h1 {
+    color: $accent;
+    font-size: 4.5rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+}
+.auth_container {
+  width: 300px;
+  height: 350px;
+  margin: 3rem 0;
+  display: flex;
+  align-self: center;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $accent;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.auth {
+  padding: 0.8rem;
+  // margin: 1rem;
+  width: 110px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  &:hover {
+    background-color: $primary-color;
+    color: $accent;
+  }
+}
