@@ -30,10 +30,13 @@ class Login extends Component {
             Submit
           </button>
         </Form>
-
-        <Link to="/register" className="redirect">
-          <p>register</p>
-        </Link>
+        <span>
+          Can't log in?
+          <Link to="/register" className="redirect">
+            {' '}
+            Register
+          </Link>
+        </span>
       </div>
     );
   }

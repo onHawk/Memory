@@ -37,9 +37,7 @@ class Register extends Component {
           {({ formState, formApi }) => (
             <div className="form">
               <Validate errors={formState.errors} />
-              <p style={{ padding: '5px' }}>
-                Password must be 8 characters long
-              </p>
+              <p>Password must be 8 characters long</p>
               <div className="form-fields">
                 <label>Full Name</label>
                 <Text field="fullname" placeholder="full name" />
@@ -85,20 +83,13 @@ class Register extends Component {
                 Sign Up
               </button>
 
-              <h3>{this.props.message}</h3>
+              {/* <h3>{this.props.message}</h3> */}
             </div>
           )}
         </Form>
-        <span>
+        <span style={{ margin: '5px 0' }}>
           Already registered?
-          <Link
-            to="/login"
-            style={{
-              marginLeft: '1px',
-              textDecoration: 'none',
-              color: '#73c2fb',
-            }}
-          >
+          <Link to="/login" className="redirect">
             {' '}
             Login
           </Link>
