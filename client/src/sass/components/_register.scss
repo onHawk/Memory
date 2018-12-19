@@ -2,22 +2,22 @@
   display: flex;
   flex-flow: column;
   &-fields {
-    height: 50px;
+    height: 55px;
     // width: 100px;
     margin-bottom: 5px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Yrsa', serif;
     input {
       width: 250px;
-      border: none;
-      padding: 8px;
+
+      padding: 11px;
       border-radius: 4px;
       outline: none;
-      // background-color: #eeeeee;
+      background-color: #faf7f0;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      // border-bottom: 2px solid red;
+      border: 0.5px solid #35383a;
     }
   }
   &-button {

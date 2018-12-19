@@ -15,7 +15,7 @@ const Landing = () => {
         </Link>
 
         <Link to="register" className="auth">
-          Register
+          Sign Up
         </Link>
       </div>
     </div>
