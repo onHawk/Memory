@@ -28,12 +28,13 @@ class Register extends Component {
   passwordValidation = (value, values) => {
     return this.basicValidation(value) || this.matchValidation(value, values);
   };
+
   render() {
     return (
       <div className="container">
         <h2 style={{ margin: '0' }}>Register</h2>
         <Form onSubmit={values => this.handleSubmit(values)}>
-          {({ formState }) => (
+          {({ formState, formApi }) => (
             <div className="form">
               <Validate errors={formState.errors} />
               <p style={{ padding: '5px' }}>
@@ -41,35 +42,38 @@ class Register extends Component {
               </p>
               <div className="form-fields">
                 <label>Full Name</label>
-                <Text field="fullname" placeholder="..." />
+                <Text field="fullname" placeholder="full name" />
               </div>
 
               <div className="form-fields">
                 <label>username</label>
-                <Text field="username" placeholder="..." />
+                <Text field="username" placeholder="username" />
               </div>
 
               <div className="form-fields">
                 <label>email</label>
-                <Text field="email" placeholder="..." />
+                <Text field="email" placeholder="email" />
               </div>
 
               <div className="form-fields">
                 <label>password</label>
                 <Text
-                  placeholder="..."
+                  placeholder="password"
                   field="password"
+                  type="password"
                   validate={this.passwordValidation}
                   validateOnChange
                   notify={['confirmPassword']}
                 />
+                <code>{console.log(formState.values)}</code>
               </div>
               <div className="form-fields">
                 <label htmlFor="notify-confirm-password">
                   Confirm password:
                 </label>
                 <Text
-                  placeholder="..."
+                  placeholder="confirm password"
+                  type="password"
                   field="confirmPassword"
                   validate={this.passwordValidation}
                   validateOnChange
