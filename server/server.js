@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const server = express();
 
@@ -38,5 +39,7 @@ server.use(morgan('dev'));
 server.use(cors());
 
 routes(server);
+
+server.use(express.static(path.join(__dirname, 'client/build')));
 
 module.exports = { server };
