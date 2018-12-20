@@ -10,15 +10,13 @@ const server = express();
 
 require('dotenv').load();
 
-/*** Change for a .env */
-const port = 5000;
-/******************** */
+const port = process.env.PORT;
 
 const routes = require('./routes/');
 
 mongoose
   .connect(
-    'mongodb://localhost/journalentries',
+    process.env.MONGO_DB,
     { useNewUrlParser: true }
   )
   .then(connect => {
