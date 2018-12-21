@@ -9,30 +9,61 @@ import { allEntries } from '../actions/EntryActions';
 
 import Entries from './entries/AllEntries';
 
+import ReactDOM from 'react-dom';
+
 class HomePage extends Component {
+  state = {
+    scrolled: false,
+  };
+
   componentWillMount() {
     this.props.allEntries();
   }
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.handleScroll);
+  // }
+
+  // handleScroll = e => {
+  //   if (e) {
+  //     this.setState({ scrolled: !this.state.scrolled });
+  //   }
+  //   console.log(ReactDOM);
+  // };
 
   render() {
-    const { entries, usersentries } = this.props;
-    console.log(entries);
+    const { entries, user } = this.props;
+    console.log(user);
     return (
-      <div>
-        <h1>Welcome to the Home page</h1>
-        <p onClick={() => this.props.logout(this.props.history)}>Log out</p>
-        {entries ? (
-          entries.map((e, i) => {
-            return (
-              <Entries key={i} title={e.title} body={e.content} id={e._id} />
-            );
-          })
-        ) : (
-          <p> loading</p>
-        )}
-        <Link to="/create">
-          <p>create</p>
-        </Link>
+      <div className="homepage">
+        <div className="title_bar">
+          <h1>{this.props.user.username}</h1>
+        </div>
+        <div className="content">
+          <div className="nav">
+            <span onClick={() => this.props.logout(this.props.history)}>
+              Log out
+            </span>
+            <Link to="/create" className="create">
+              <span>create</span>
+            </Link>
+          </div>
+          <div className="content-list">
+            {entries ? (
+              entries.map((e, i) => {
+                return (
+                  <Entries
+                    key={i}
+                    title={e.title}
+                    body={e.content}
+                    id={e._id}
+                  />
+                );
+              })
+            ) : (
+              <p> loading</p>
+            )}
+          </div>
+        </div>
       </div>
     );
   }
@@ -40,6 +71,7 @@ class HomePage extends Component {
 
 const mapStateToprops = state => {
   return {
+    user: state.auth.user,
     entries: state.journal.entries,
     usersentries: state.auth.user_entries,
   };
