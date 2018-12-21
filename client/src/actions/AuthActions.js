@@ -32,7 +32,7 @@ export function authError(error) {
 export function register(info, history) {
   return dispatch => {
     axios
-      .post(`${HOST}/api/register`, info, {
+      .post(`/api/register`, info, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
@@ -54,7 +54,7 @@ export function register(info, history) {
 export function login(credentials, history) {
   return dispatch => {
     axios
-      .post(`${HOST}/api/login`, credentials, {
+      .post(`/api/login`, credentials, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {

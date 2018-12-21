@@ -15,7 +15,7 @@ const HOST = 'http://localhost:5000';
 export function allEntries() {
   return dispatch => {
     axios
-      .get(`${HOST}/api/my_entries`, {
+      .get(`/api/my_entries`, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
@@ -31,7 +31,7 @@ export function allEntries() {
 export function oneEntry(id) {
   return dispatch => {
     axios
-      .get(`${HOST}/api/entry/${id}`, {
+      .get(`/api/entry/${id}`, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
@@ -47,7 +47,7 @@ export function oneEntry(id) {
 export function createEntry(entry, history) {
   return dispatch => {
     axios
-      .post(`${HOST}/api/create_page`, entry, {
+      .post(`/api/create_page`, entry, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
@@ -65,7 +65,7 @@ export function createEntry(entry, history) {
 export function deleteEntry(id, history) {
   return dispatch => {
     axios
-      .delete(`${HOST}/api/delete_entry/${id}`, {
+      .delete(`/api/delete_entry/${id}`, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
@@ -86,7 +86,7 @@ export function editEntry(entry, history) {
     const id = getState().journal.entry_view._id;
 
     axios
-      .put(`${HOST}/api/edit_entry/${id}`, entry, {
+      .put(`/api/edit_entry/${id}`, entry, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
