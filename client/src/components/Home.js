@@ -36,23 +36,17 @@ class HomePage extends Component {
     console.log(user);
     return (
       <div className="homepage">
-        <div className="title_bar">
+        <div className="nav">
           <h2>{this.props.user.username}</h2>
 
-          <div
-            onClick={() => this.props.logout(this.props.history)}
-            className="logout"
-          >
-            <p>Log out</p>
-          </div>
-          <div className="nav">
-            <Link to="/create" style={{ justifyContent: 'center' }}>
-              <div className="nav-create">
-                <FaFeatherAlt />
-                <p>create</p>
-              </div>
-            </Link>
-          </div>
+          <p onClick={() => this.props.logout(this.props.history)}>Log out</p>
+
+          <Link to="/create" style={{ textDecoration: 'none' }}>
+            <div className="nav-create">
+              <FaFeatherAlt />
+              <p>create</p>
+            </div>
+          </Link>
         </div>
 
         <div className="content">
