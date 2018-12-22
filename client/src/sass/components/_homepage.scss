@@ -1,9 +1,9 @@
 .homepage {
   display: flex;
-
+  // height: 100%;
   justify-content: space-between;
   // background-color: #332b00;
-  background-image: url('notebook-1920x1080.png');
+
   @media screen and (max-width: 580px) {
     flex-flow: column-reverse;
   }
