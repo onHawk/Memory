@@ -38,15 +38,27 @@ class HomePage extends Component {
       <div className="homepage">
         <div className="title_bar">
           <h2>{this.props.user.username}</h2>
+
           <div
             onClick={() => this.props.logout(this.props.history)}
             className="logout"
           >
             <p>Log out</p>
           </div>
+          <div className="nav">
+            <Link to="/create" style={{ justifyContent: 'center' }}>
+              <div className="nav-create">
+                <FaFeatherAlt />
+                <p>create</p>
+              </div>
+            </Link>
+          </div>
         </div>
 
         <div className="content">
+          <div>
+            <p>{entries.length}</p>
+          </div>
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
@@ -63,15 +75,6 @@ class HomePage extends Component {
             ) : (
               <p> loading</p>
             )}
-          </div>
-
-          <div className="nav">
-            <Link to="/create" style={{ justifyContent: 'center' }}>
-              <div className="nav-create">
-                <FaFeatherAlt />
-                <p>create</p>
-              </div>
-            </Link>
           </div>
         </div>
       </div>
