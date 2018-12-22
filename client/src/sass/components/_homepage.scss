@@ -35,7 +35,7 @@
     font-size: 14x;
     text-decoration: none;
   }
-  &-create {
+  &-link {
     align-self: center;
     padding: 8.5px;
     text-align: center;
@@ -107,6 +107,7 @@
   }
 }
 .box {
+  margin-top: 1px;
   top: 2rem;
   position: sticky;
   height: 75px;
