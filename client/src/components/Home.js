@@ -9,6 +9,7 @@ import { allEntries } from '../actions/EntryActions';
 
 import Entries from './entries/AllEntries';
 
+import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
 import ReactDOM from 'react-dom';
 
 class HomePage extends Component {
@@ -36,17 +37,16 @@ class HomePage extends Component {
     return (
       <div className="homepage">
         <div className="title_bar">
-          <h1>{this.props.user.username}</h1>
-        </div>
-        <div className="content">
-          <div className="nav">
-            <span onClick={() => this.props.logout(this.props.history)}>
-              Log out
-            </span>
-            <Link to="/create" className="create">
-              <span>create</span>
-            </Link>
+          <h2>{this.props.user.username}</h2>
+          <div
+            onClick={() => this.props.logout(this.props.history)}
+            className="logout"
+          >
+            <p>Log out</p>
           </div>
+        </div>
+
+        <div className="content">
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
@@ -55,6 +55,7 @@ class HomePage extends Component {
                     key={i}
                     title={e.title}
                     body={e.content}
+                    label={e.label}
                     id={e._id}
                   />
                 );
@@ -62,6 +63,15 @@ class HomePage extends Component {
             ) : (
               <p> loading</p>
             )}
+          </div>
+
+          <div className="nav">
+            <Link to="/create" style={{ justifyContent: 'center' }}>
+              <div className="nav-create">
+                <FaFeatherAlt />
+                <p>create</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
