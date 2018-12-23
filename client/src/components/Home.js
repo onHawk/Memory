@@ -8,6 +8,7 @@ import { logout } from '../actions/AuthActions';
 import { allEntries } from '../actions/EntryActions';
 
 import Entries from './entries/AllEntries';
+import Nav from './Nav';
 
 import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
 import ReactDOM from 'react-dom';
@@ -36,20 +37,7 @@ class HomePage extends Component {
     console.log(user);
     return (
       <div className="homepage">
-        <div className="nav">
-          <h2>{this.props.user.username}</h2>
-          <Link to="/home" className="nav-link">
-            <p>home</p>
-          </Link>
-          <p onClick={() => this.props.logout(this.props.history)}>Log out</p>
-
-          <Link to="/create" style={{ textDecoration: 'none' }}>
-            <div className="nav-link">
-              <FaFeatherAlt />
-              <p>create</p>
-            </div>
-          </Link>
-        </div>
+        <Nav />
 
         <div className="content">
           <div>
