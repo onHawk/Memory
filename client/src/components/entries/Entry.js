@@ -1,16 +1,32 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { deleteEntry } from '../../actions/EntryActions';
 
+import { FiTrash2, FiEdit3 } from 'react-icons/fi';
+
 const Entry = props => {
   return (
-    <div>
-      <div onClick={() => props.deleteEntry(props.id, props.history)}>X</div>
-      <p>{props.title}</p>
-      <p>{props.label}</p>
-      <p>{props.body}</p>
+    <div className="fullview">
+      <div className="fullview-edits">
+        <FiTrash2
+          style={{
+            padding: '5px',
+          }}
+          onClick={() => this.props.deleteEntry(props.id, props.history)}
+        />
+
+        <Link to={`/edit/${props.id}`}>edit</Link>
+      </div>
+
+      <div className="fullview-contents">
+        <p className="fullview-title">{props.title.toUpperCase()}</p>
+        <span className="fullview-line" />
+        <p className="fullview-label">#{props.label}</p>
+        <p className="fullview-body">{props.body}</p>
+      </div>
     </div>
   );
 };
