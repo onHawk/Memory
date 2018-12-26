@@ -23,7 +23,7 @@ class FullView extends Component {
       <div style={{ height: '100%' }}>
         {entry ? (
           <div className="view_container">
-            <Nav />
+            <Nav history={this.props.history} />
 
             <Entry
               id={entry._id}

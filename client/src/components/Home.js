@@ -37,7 +37,7 @@ class HomePage extends Component {
     console.log(user);
     return (
       <div className="homepage">
-        <Nav />
+        <Nav history={this.props.history} />
 
         <div className="content">
           <div>
