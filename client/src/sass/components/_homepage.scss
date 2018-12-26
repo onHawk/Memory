@@ -22,25 +22,18 @@
   background-color: #35383aef;
   color: #f5f3f0;
   font-family: 'Yrsa', serif;
-  font-size: 1.2rem;
 
-  h1 {
-    margin: 10px 0 0 0;
-    text-align: center;
-    // alig n-self: center;
-  }
   p {
     cursor: pointer;
     margin: 0;
-    font-size: 14x;
     text-decoration: none;
   }
   &-link {
     align-self: center;
-    padding: 8.5px;
+    padding: 8px;
     text-align: center;
     color: #f5f3f0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
 
     border-radius: 2px;
