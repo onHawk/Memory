@@ -20,7 +20,7 @@ class FullView extends Component {
     const { entry } = this.props;
     console.log(entry);
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         {entry ? (
           <div className="view_container">
             <Nav />

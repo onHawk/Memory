@@ -45,6 +45,7 @@
   }
 
   @media screen and (max-width: 580px) {
+    padding: 2px;
     flex-flow: row;
     box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.19),
       1px -3px 6px rgba(0, 0, 0, 0.23);

@@ -12,13 +12,13 @@ const Entry = props => {
     <div className="fullview">
       <div className="fullview-edits">
         <FiTrash2
-          style={{
-            padding: '5px',
-          }}
+          className="fullview-edits-button"
           onClick={() => this.props.deleteEntry(props.id, props.history)}
         />
 
-        <Link to={`/edit/${props.id}`}>edit</Link>
+        <Link to={`/edit/${props.id}`} className="fullview-edits-button">
+          edit
+        </Link>
       </div>
 
       <div className="fullview-contents">
