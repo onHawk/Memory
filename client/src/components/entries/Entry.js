@@ -13,7 +13,7 @@ const Entry = props => {
       <div className="fullview-edits">
         <FiTrash2
           className="fullview-edits-button"
-          onClick={() => this.props.deleteEntry(props.id, props.history)}
+          onClick={() => props.deleteEntry(props.id, props.history)}
         />
 
         <Link to={`/edit/${props.id}`} className="fullview-edits-button">
