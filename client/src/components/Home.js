@@ -36,7 +36,7 @@ class HomePage extends Component {
     const { entries, user } = this.props;
     console.log(user);
     return (
-      <div className="homepage">
+      <div>
         <Nav history={this.props.history} />
 
         <div className="content">
