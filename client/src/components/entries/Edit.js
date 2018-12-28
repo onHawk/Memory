@@ -36,18 +36,26 @@ class Edit extends Component {
 
               <Text
                 field="title"
+                autoComplete="off"
+                maxLength="12"
                 initialValue={entry.title}
                 className="create_form-title"
               />
             </div>
 
             <div className="create_form-labels">
-              <Text field="label" initialValue={entry.label} />
+              <Text
+                field="label"
+                autoComplete="off"
+                maxLength="6"
+                initialValue={entry.label}
+              />
               <p>{}</p>
             </div>
 
             <TextArea
               field="content"
+              autoComplete="off"
               initialValue={entry.content}
               className="create_form-body"
             />
