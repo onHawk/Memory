@@ -11,10 +11,6 @@ export const AUTH_ERROR = 'AUTH_ERROR';
 
 export const USER_ENTRIES = 'USER_ENTRIES';
 
-const token = localStorage.getItem('id');
-
-const HOST = 'http://localhost:5000';
-
 export function authError(error) {
   if (error) {
     return {

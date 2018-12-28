@@ -10,8 +10,8 @@ import { allEntries } from '../actions/EntryActions';
 import Entries from './entries/AllEntries';
 import Nav from './Nav';
 
-import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
-import ReactDOM from 'react-dom';
+// import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
+// import ReactDOM from 'react-dom';
 
 class HomePage extends Component {
   state = {

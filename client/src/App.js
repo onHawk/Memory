@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import logo from './logo.svg';
 import './sass/App.scss';
 
 import Landing from './components/Landing';

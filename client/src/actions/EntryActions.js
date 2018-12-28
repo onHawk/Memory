@@ -10,8 +10,6 @@ axios.defaults.headers.common.Authorization = `bearer ${localStorage.getItem(
   'id'
 )}`;
 
-const HOST = 'http://localhost:5000';
-
 export function allEntries() {
   return dispatch => {
     axios

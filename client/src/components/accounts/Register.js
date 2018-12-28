@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Text, withFormState } from 'informed';
+import { Form, Text } from 'informed';
 
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
