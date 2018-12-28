@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import { editEntry, oneEntry } from '../../actions/EntryActions';
 
+import Nav from '../Nav';
+
 class Edit extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -21,19 +23,34 @@ class Edit extends Component {
 
     console.log(this.props.entry);
     return (
-      <div>
+      <div className="create_container">
+        <Nav history={this.props.history} />
+
         {entry ? (
-          <Form onSubmit={values => this.handleSubmit(values)}>
-            <label>Title</label>
-            <Text field="title" initialValue={entry.title} />
+          <Form
+            onSubmit={values => this.handleSubmit(values)}
+            className="create_form"
+          >
+            <div className="top">
+              <button type="submit">Save</button>
 
-            <label>label</label>
-            <Text field="label" initialValue={entry.label} />
+              <Text
+                field="title"
+                initialValue={entry.title}
+                className="create_form-title"
+              />
+            </div>
 
-            <label>write something</label>
-            <TextArea field="content" initialValue={entry.content} />
+            <div className="create_form-labels">
+              <Text field="label" initialValue={entry.label} />
+              <p>{}</p>
+            </div>
 
-            <button type="submit">Finish</button>
+            <TextArea
+              field="content"
+              initialValue={entry.content}
+              className="create_form-body"
+            />
           </Form>
         ) : null}
       </div>
