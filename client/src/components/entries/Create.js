@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import { createEntry } from '../../actions/EntryActions';
 
+import Nav from '../Nav';
+
 class Create extends Component {
   handleSubmit(entry) {
     console.log(entry);
@@ -14,18 +16,41 @@ class Create extends Component {
 
   render() {
     return (
-      <div>
-        <Form onSubmit={values => this.handleSubmit(values)}>
-          <label>Title</label>
-          <Text field="title" />
+      <div className="create_container">
+        <Nav history={this.props.history} />
 
-          <label>label</label>
-          <Text field="label" />
+        <Form
+          onSubmit={values => this.handleSubmit(values)}
+          className="create_form"
+        >
+          <div className="top">
+            <button type="submit">Save</button>
 
-          <label>write something</label>
-          <TextArea field="content" />
+            <Text
+              field="title"
+              placeholder="Title..."
+              autoComplete="off"
+              maxLength="12"
+              className="create_form-title"
+            />
+          </div>
+          <div className="create_form-labels">
+            <Text
+              field="label"
+              placeholder="#label"
+              autoComplete="off"
+              maxLength="6"
+            />
+            <p>{Date.now()}</p>
+          </div>
 
-          <button type="submit">Finish</button>
+          <TextArea
+            field="content"
+            placeholder="write something..."
+            autoComplete="off"
+            className="create_form-body"
+          />
+          {/* </div> */}
         </Form>
       </div>
     );

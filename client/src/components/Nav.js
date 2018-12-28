@@ -10,7 +10,7 @@ import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
 const Nav = props => {
   return (
     <div className="nav">
-      <code>{console.log(props)}</code>
+      {/* <code>{console.log(props)}</code> */}
       {/* <h2>{this.props.user.username}</h2> */}
       <Link to="/home" className="nav-link">
         <p>Home</p>
