@@ -4,8 +4,8 @@
   display: flex;
   flex-flow: column;
   // justify-content: space-around;
-  // height: 100vh;
-  position: unset;
+  height: 100vh;
+  position: fixed;
   background-color: #35383aef;
 
   font-family: 'Yrsa', serif;
@@ -55,7 +55,6 @@
 
   display: flex;
   justify-content: flex-end;
-
   @media screen and (max-width: 580px) {
     margin: 3rem 0;
     width: 100%;
