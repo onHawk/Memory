@@ -22,7 +22,7 @@ const Entry = props => {
       </div>
 
       <div className="fullview-contents">
-        <p className="fullview-title">{props.title.toUpperCase()}</p>
+        <p className="fullview-title">{props.title}</p>
         <span className="fullview-line" />
         <p className="fullview-label">#{props.label}</p>
         <p className="fullview-body">{props.body}</p>

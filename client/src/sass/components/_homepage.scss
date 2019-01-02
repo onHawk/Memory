@@ -51,19 +51,19 @@
 }
 
 .content {
-  padding: 5px 0 1rem 0;
+  padding: 10px 0;
 
   display: flex;
   justify-content: flex-end;
   @media screen and (max-width: 580px) {
-    margin: 3rem 0;
+    // margin: 3rem 0;
     width: 100%;
     align-items: center;
     flex-flow: column;
   }
   &-list {
     width: 75%;
-    margin: 2rem 4% 0 0;
+    margin: 2rem 2%;
     // border-radius: 5px;
     display: flex;
     flex-flow: column;
@@ -72,14 +72,14 @@
     @media screen and (max-width: 580px) {
       width: 100%;
       // padding: 2px;
-      margin: 2rem 0;
+      margin: 4rem 0;
     }
   }
 }
 .box {
   margin-top: 1px;
-  top: 2rem;
-  position: sticky;
+  // top: 2rem;
+  // position: sticky;
   height: 75px;
   width: 60%;
   border-radius: 4px;
