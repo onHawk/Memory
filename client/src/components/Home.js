@@ -7,6 +7,8 @@ import { logout } from '../actions/AuthActions';
 
 import { allEntries } from '../actions/EntryActions';
 
+import moment from 'moment';
+
 import Entries from './entries/AllEntries';
 import Nav from './Nav';
 
@@ -46,12 +48,18 @@ class HomePage extends Component {
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
+                /**Date formatting */
+                const day = moment(e.createdOn).format('dddd');
+                const date = moment(e.createdOn).format('D');
+                /**************** */
                 return (
                   <Entries
                     key={i}
                     title={e.title}
                     body={e.content}
                     label={e.label}
+                    day={day}
+                    date={date}
                     id={e._id}
                   />
                 );
