@@ -6,16 +6,20 @@ const AllEntries = props => {
     <div className="box">
       <Link to={`/entry/${props.id}`} className="box-contents">
         <div className="box-contents-left">
-          <span
+          <div className="box-contents-labels">
+            <p style={{ fontWeight: 'bold' }}>{props.title}</p>
+            <p style={{ color: '#a2daff', fontSize: '14px' }}>{props.label}</p>
+          </div>
+          <p
             style={{
-              display: 'flex',
-              justifyContent: 'space-around',
+              height: '35px',
+              overflow: 'hidden',
+              margin: '0',
+              padding: '0',
             }}
           >
-            <p style={{ fontWeight: 'bold' }}>{props.title}</p>
-            <p style={{ color: '#a2daff' }}>{props.label}</p>
-          </span>
-          <p>{props.body}</p>
+            {props.body}
+          </p>
         </div>
 
         <div className="box-contents-right">
