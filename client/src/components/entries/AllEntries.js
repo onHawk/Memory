@@ -23,10 +23,9 @@ const AllEntries = props => {
         </div>
 
         <div className="box-contents-right">
+          <p>{props.month}</p>
           <p id="date">{props.date}</p>
-          <p style={{ fontSize: '14px', fontFamily: 'Dosis, sans-serif' }}>
-            {props.day}
-          </p>
+          <p style={{ fontSize: '14px' }}>{props.day}</p>
         </div>
       </Link>
     </div>

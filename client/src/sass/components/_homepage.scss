@@ -118,20 +118,22 @@
     &-right {
       display: flex;
       flex-flow: column;
+      justify-content: space-between;
       width: 20%;
       text-align: center;
-      padding: 8px;
       p {
+        font-family: 'Dosis', sans-serif;
         overflow: none;
+        margin: 0;
       }
     }
   }
 }
 #date {
   font-size: 34px;
-  margin: 9px 0 12px 0;
+  // margin: 9px 0 12px 0;
   color: #a2daff;
-  font-family: 'Dosis', sans-serif;
+  // font-family: 'Dosis', sans-serif;
 }
 
 ::-webkit-scrollbar {

@@ -51,6 +51,7 @@ class HomePage extends Component {
                 /**Date formatting */
                 const day = moment(e.createdOn).format('dddd');
                 const date = moment(e.createdOn).format('D');
+                const month = moment(e.createdOn).format('MMMM');
                 /**************** */
                 return (
                   <Entries
@@ -60,6 +61,7 @@ class HomePage extends Component {
                     label={e.label}
                     day={day}
                     date={date}
+                    month={month}
                     id={e._id}
                   />
                 );
