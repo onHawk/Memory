@@ -4,15 +4,16 @@
   background-color: #35383a;
 }
 .top {
-  margin: 2rem 0;
+  margin-top: 2rem;
   width: 98%;
   display: flex;
   flex-flow: row-reverse;
   justify-content: space-between;
+
   button {
     margin-right: 1rem;
     background-color: #faf7f0;
-    border: 1px solid #35383a;
+    border: 2px solid #35383a;
     color: #35383a;
     font-size: 12px;
     font-family: 'yrsa', 'sans';
@@ -21,14 +22,21 @@
     border-radius: 18px;
     outline: none;
     cursor: pointer;
+
+    transition: 0.5s all;
+    &:hover {
+      font-weight: bold;
+      background-color: #a2daff;
+      border-width: 1px;
+    }
   }
 }
 .create_form {
   margin: 2px auto 1rem 30%;
+  padding: 5px 0;
   display: flex;
   flex-flow: column;
   align-items: center;
-
   width: 800px;
   background-color: #faf7f0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -43,22 +51,20 @@
   }
   @media screen and (max-width: 580px) {
     width: 98%;
-    margin: 0 auto 3rem auto;
-    padding-bottom: 10px;
+    margin: 2px auto 4rem auto;
+
     // margin-bottom: 4rem;
   }
   &-title {
-    width: 40%;
+    width: 50%;
     background-color: #faf7f0;
-    // border-bottom: 1px solid black;
     border: none;
     outline: none;
     font-family: 'yrsa', 'sans-serif';
     font-size: 24px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(223, 219, 219, 0.233);
-    border-radius: 18px;
-    padding: 1px 5px;
+    // margin-bottom: 15px;
+    // border-radius: 18px;
+    padding: 5px;
   }
   &-labels {
     width: 98%;
@@ -66,12 +72,11 @@
     margin: 5px 0;
     text-align: center;
 
-    padding: 5px;
+    padding: 10px 0;
     input {
       width: 20%;
-      padding: 5px;
-      border: 1px solid rgba(223, 219, 219, 0.233);
-      border-radius: 18px;
+      padding: 10px;
+      border: none;
       outline: none;
       font-family: 'yrsa';
       font-size: 14px;
@@ -81,7 +86,6 @@
       width: 30%;
       margin: 0;
       font-size: 12px;
-      border: 1px solid rgba(223, 219, 219, 0.233);
       border-radius: 18px;
     }
   }
@@ -98,7 +102,7 @@
     resize: none;
     // overflow: auto;
     color: #35383a;
-    border-top: 2px solid rgba(223, 219, 219, 0.233);
+    border-top: 1px solid #35383a;
     &::-webkit-scrollbar {
       display: none;
     }
