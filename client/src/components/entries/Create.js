@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Form, Text, TextArea } from 'informed';
+import moment from 'moment';
 
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { createEntry } from '../../actions/EntryActions';
-
 import Nav from '../Nav';
+
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 class Create extends Component {
   handleSubmit(entry) {
@@ -15,6 +18,8 @@ class Create extends Component {
   }
 
   render() {
+    const today = moment(Date.now()).format('MMM D YYYY');
+
     return (
       <div className="create_container">
         <Nav history={this.props.history} />
@@ -41,7 +46,7 @@ class Create extends Component {
               autoComplete="off"
               maxLength="6"
             />
-            <p>{Date.now()}</p>
+            <p>{today}</p>
           </div>
 
           <TextArea

@@ -83,10 +83,12 @@
       background-color: #faf7f0;
     }
     p {
-      width: 30%;
+      height: fit-content;
       margin: 0;
+      padding-top: 6px;
       font-size: 12px;
-      border-radius: 18px;
+      font-weight: 500;
+      color: #35383a;
     }
   }
   &-body {
