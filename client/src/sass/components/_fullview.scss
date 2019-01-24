@@ -49,11 +49,16 @@
     padding: 1rem;
     font-size: 20px;
     color: #35383a;
+
+    position: sticky;
+    top: 0;
+    background-color: #faf7f0b2;
     &-button {
       cursor: pointer;
       height: 15px;
       width: 25px;
       font-size: 15px;
+      font-weight: bold;
       color: #35383a;
       text-decoration: none;
       text-align: center;
