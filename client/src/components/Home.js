@@ -37,21 +37,26 @@ class HomePage extends Component {
   render() {
     const { entries, user } = this.props;
     console.log(user);
+    const today = moment(Date.now()).format('MMMM D YYYY');
+
     return (
       <div>
         <Nav history={this.props.history} />
 
         <div className="content">
-          <div>
-            <p>{entries.length}</p>
+          <div className="content-info">
+            <div>
+              <p>{today}</p>
+              <p>Total entries: {entries.length}</p>
+            </div>
           </div>
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
                 /**Date formatting */
-                const day = moment(e.createdOn).format('dddd');
+                const day = moment(e.createdOn).format('ddd');
                 const date = moment(e.createdOn).format('D');
-                const month = moment(e.createdOn).format('MMMM');
+                const month = moment(e.createdOn).format('MMM');
                 /**************** */
                 return (
                   <Entries
