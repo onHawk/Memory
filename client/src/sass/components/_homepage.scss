@@ -10,6 +10,7 @@
   border-left: 2px solid #faf7f0;
   font-family: 'Yrsa', serif;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 2px 0;
   p {
     cursor: pointer;
     margin: 0;
@@ -47,8 +48,33 @@
   }
 }
 
+/** Home page top **************************************************/
+/** Shadow styles **/
+.no_shadow {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0px;
+  transition: 0.2s all;
+}
+
+.shadow {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #f5f3f0;
+  transition: 0.4s box-shadow;
+  // #f5f3f0
+}
+/**********************/
+/**************************************************************************/
+
 .content {
-  padding: 5px 0;
+  padding-bottom: 5px;
 
   display: flex;
   justify-content: flex-end;
@@ -64,10 +90,7 @@
     align-items: center;
     flex-flow: column;
   }
-  &-info {
-    width: 30%;
-    border: 1px solid red;
-  }
+
   &-list {
     width: 60%;
     margin: 2rem 0;

@@ -17,22 +17,21 @@ import Nav from './Nav';
 
 class HomePage extends Component {
   state = {
-    scrolled: false,
+    offset: 0,
   };
 
   componentWillMount() {
     this.props.allEntries();
   }
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.handleScroll);
-  // }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
 
-  // handleScroll = e => {
-  //   if (e) {
-  //     this.setState({ scrolled: !this.state.scrolled });
-  //   }
-  //   console.log(ReactDOM);
-  // };
+  handleScroll = e => {
+    this.setState({ offset: window.pageYOffset });
+
+    // console.log(this.state.offset);
+  };
 
   render() {
     const { entries, user } = this.props;
@@ -43,8 +42,8 @@ class HomePage extends Component {
       <div>
         <Nav history={this.props.history} />
 
-        <div className="content">
-          <div className="content-info">
+        <div className="content" onScroll={() => this.handleScroll}>
+          <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
             <div>
               <p>{today}</p>
               <p>Total entries: {entries.length}</p>
