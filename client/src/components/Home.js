@@ -20,11 +20,13 @@ class HomePage extends Component {
     offset: 0,
   };
 
-  componentWillMount() {
-    this.props.allEntries();
-  }
   componentDidMount() {
+    this.props.allEntries();
     window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll = e => {
@@ -35,7 +37,7 @@ class HomePage extends Component {
 
   render() {
     const { entries, user } = this.props;
-    console.log(user);
+    // console.log(user);
     const today = moment(Date.now()).format('MMMM D YYYY');
 
     return (
