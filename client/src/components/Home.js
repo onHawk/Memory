@@ -44,12 +44,12 @@ class HomePage extends Component {
       <div>
         <Nav history={this.props.history} />
 
-        <div className="content" onScroll={() => this.handleScroll}>
+        <div className="content">
           <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
-            <div>
-              <p>{today}</p>
-              <p>Total entries: {entries.length}</p>
-            </div>
+            <p style={{ textAlign: 'center', marginTop: '1rem' }}>{today}</p>
+          </div>
+          <div style={{ width: '100%' }}>
+            <p>Total entries: {entries.length}</p>
           </div>
           <div className="content-list">
             {entries ? (
