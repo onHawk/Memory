@@ -50,22 +50,29 @@ class HomePage extends Component {
     const today = moment(Date.now()).format('MMMM D YYYY');
 
     return (
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexFlow: 'column',
+        }}
+      >
         <Nav history={this.props.history} />
+
+        <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
+          <p
+            style={{
+              fontSize: '20px',
+              width: 'fit-content',
+              marginRight: '80px',
+            }}
+          >
+            {today}
+          </p>
+        </div>
 
         <div className="content">
           {/* <div> */}
-          <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
-            <p
-              style={{
-                textAlign: 'center',
-                marginTop: '1rem',
-                fontSize: '20px',
-              }}
-            >
-              {today}
-            </p>
-          </div>
 
           <div style={{ width: '100%', textAlign: 'center', fontSize: '14px' }}>
             <p>
