@@ -75,8 +75,10 @@ class HomePage extends Component {
           {/* <div> */}
 
           <div style={{ width: '100%', textAlign: 'center', fontSize: '14px' }}>
-            <p>
-              <span style={{ fontWeight: 'bold' }}>Total entries:</span>{' '}
+            <p style={{ color: '#a2daff' }}>
+              <span style={{ fontWeight: 'bold', color: '#333333' }}>
+                Total entries:
+              </span>{' '}
               {entries.length}
             </p>
 
