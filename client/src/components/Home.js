@@ -11,6 +11,7 @@ import moment from 'moment';
 
 import Entries from './entries/AllEntries';
 import Nav from './Nav';
+import LastDate from './lastEntryData';
 
 // import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
 // import ReactDOM from 'react-dom';
@@ -31,9 +32,17 @@ class HomePage extends Component {
 
   handleScroll = e => {
     this.setState({ offset: window.pageYOffset });
-
-    // console.log(this.state.offset);
   };
+
+  /** Grab last entry's date **/
+  lastCreated(ent) {
+    let lastEntry = ent[ent.length - 1];
+
+    let le = moment(lastEntry).format('MMM D');
+
+    return le;
+  }
+  /*************************/
 
   render() {
     const { entries, user } = this.props;
@@ -45,12 +54,29 @@ class HomePage extends Component {
         <Nav history={this.props.history} />
 
         <div className="content">
+          {/* <div> */}
           <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
-            <p style={{ textAlign: 'center', marginTop: '1rem' }}>{today}</p>
+            <p
+              style={{
+                textAlign: 'center',
+                marginTop: '1rem',
+                fontSize: '20px',
+              }}
+            >
+              {today}
+            </p>
           </div>
-          <div style={{ width: '100%' }}>
-            <p>Total entries: {entries.length}</p>
+
+          <div style={{ width: '100%', textAlign: 'center', fontSize: '14px' }}>
+            <p>
+              <span style={{ fontWeight: 'bold' }}>Total entries:</span>{' '}
+              {entries.length}
+            </p>
+
+            <LastDate lastDate={this.lastCreated} entries={entries} />
           </div>
+
+          {/* </div> */}
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
@@ -59,6 +85,7 @@ class HomePage extends Component {
                 const date = moment(e.createdOn).format('D');
                 const month = moment(e.createdOn).format('MMM');
                 /**************** */
+
                 return (
                   <Entries
                     key={i}
