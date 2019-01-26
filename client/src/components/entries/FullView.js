@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { oneEntry, deleteEntry } from '../../actions/EntryActions';
 
 import Nav from '../Nav';
 import Entry from './Entry';
-import Edit from './Edit';
+// import Edit from './Edit';
 
 class FullView extends Component {
   componentWillMount() {
     const id = this.props.match.params.id;
 
     this.props.oneEntry(id);
+    // console.log(this.props);
+    // console.log(this.props.entry);
   }
 
   render() {

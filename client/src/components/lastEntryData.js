@@ -1,7 +1,5 @@
 import React from 'react';
 
-import moment from 'moment';
-
 const LastDate = props => {
   const { entries, lastDate } = props;
   const last = lastDate(entries);

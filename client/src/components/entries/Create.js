@@ -3,7 +3,7 @@ import { Form, Text, TextArea } from 'informed';
 import moment from 'moment';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { createEntry } from '../../actions/EntryActions';
 import Nav from '../Nav';

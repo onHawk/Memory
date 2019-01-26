@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { logout } from '../actions/AuthActions';
 
@@ -45,7 +45,7 @@ class HomePage extends Component {
   /*************************/
 
   render() {
-    const { entries, user } = this.props;
+    const { entries } = this.props;
     // console.log(user);
     const today = moment(Date.now()).format('MMMM D YYYY');
 
