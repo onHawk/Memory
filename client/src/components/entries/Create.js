@@ -18,7 +18,7 @@ class Create extends Component {
   }
 
   render() {
-    const today = moment(Date.now()).format('MMM D YYYY');
+    const today = moment(Date.now()).format('MMM D YYYY / hh:mm');
 
     return (
       <div className="create_container">
