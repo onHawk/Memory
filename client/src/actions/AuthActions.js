@@ -73,6 +73,6 @@ export function logout(history) {
   return dispatch => {
     dispatch({ type: 'USER_LOGOUT', payload: 'Logged out' });
     localStorage.removeItem('id');
-    history.push('/');
+    history.push('/login');
   };
 }
