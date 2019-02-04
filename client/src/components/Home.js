@@ -36,11 +36,15 @@ class HomePage extends Component {
 
   /** Grab last entry's date **/
   lastCreated(ent) {
-    let lastEntry = ent[ent.length - 1];
+    let l = ent[ent.length - 1];
 
-    let le = moment(lastEntry).format('MMM D');
-
-    return le;
+    if (l) {
+      const lastEntry = moment(l.createdOn).format('MMM D');
+      // console.log(l);
+      return lastEntry;
+    } else {
+      return 'No entries';
+    }
   }
   /*************************/
 
