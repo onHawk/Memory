@@ -10,7 +10,7 @@ https://github.com/joepuzzo/informed
 **moment**
 https://github.com/moment/moment
 
-An Journal app I created that I hope makes you feel like you're writing in a physical journal. I also aim to have it help user remember
+A Journal app I created that I hope makes you feel like you're writing in a physical journal. I also aim to have it help user remember
 what they wrote and other things i'm still figuring out. 
 
 This is **open to the public** so any input is fully welcome!
