@@ -28,10 +28,10 @@ MONGO_DB= your DB
 
 ```
 
-#### Start
+### Start
 
-IMPORTANT**
-** You must have mongoDB installed for the server to run**
+IMPORTANT!
+You must have mongoDB installed for the server to run
 
 
 ##### client
