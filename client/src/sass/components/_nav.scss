@@ -12,14 +12,16 @@
   font-family: 'Yrsa', serif;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 2px 0;
+  // margin-bottom: 10px;
   p {
     cursor: pointer;
-    margin: 0;
     text-decoration: none;
+    font-size: 14px;
+    height: inherit;
   }
   &-link {
+    padding: 5px;
     align-self: center;
-    margin: 6px;
     text-align: center;
     color: #a2daff;
     text-decoration: none;
@@ -27,10 +29,19 @@
     font-size: 16px;
     &:active,
     :visited,
-    :before,
     :after {
-      color: #a2daff;
-      // background-color: #8ed0ff;
+      color: #f0f0f0;
+      background-color: #35383a;
+    }
+    @media screen and (max-width: 768px) {
+      height: 100%;
+      width: 25%;
+      margin-top: 10px;
+      transition: 0.3s;
+      &:hover {
+        transition: 0.3s;
+        margin-bottom: 5px;
+      }
     }
   }
 
