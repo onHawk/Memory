@@ -17,7 +17,7 @@ const Entry = props => {
         />
 
         <Link to={`/edit/${props.id}`} className="fullview-edits-button">
-          edit
+          <FiEdit3 />
         </Link>
       </div>
 
