@@ -5,30 +5,31 @@ import { Link } from 'react-router-dom';
 
 import { logout } from '../actions/AuthActions';
 
-import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
+import { FaHome, FaFeatherAlt, FaSignOutAlt } from 'react-icons/fa';
 
 const Nav = props => {
   return (
     <div className="nav">
-      <div className="nav-link">
-        <p onClick={() => props.logout(props.history)}>Log out</p>
-      </div>
+      <Link to="/home" className="nav-link">
+        <FaHome />
+        <p>Home</p>
+      </Link>
 
       <Link
         to="/create"
+        className="nav-link"
         style={{
           textDecoration: 'none',
         }}
       >
-        <div className="nav-link">
-          <FaFeatherAlt />
-          <p>Write</p>
-        </div>
+        <FaFeatherAlt />
+        <p>Write</p>
       </Link>
 
-      <Link to="/home" className="nav-link">
-        <p>Home</p>
-      </Link>
+      <div onClick={() => props.logout(props.history)} className="nav-link">
+        <FaSignOutAlt />
+        <p>Log out</p>
+      </div>
     </div>
   );
 };
