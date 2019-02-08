@@ -27,8 +27,9 @@
   // background: linear-gradient(to bottom, rgba(255, 255, 235, 0.5) 21px, #999999)
   //   0px -3px / 100% 20;
   @media screen and (max-width: 768px) {
-    width: 98%;
-    margin: 0 auto 4rem auto;
+    max-width: 375px;
+    width: 100%;
+    margin: 0 auto 3.5rem auto;
     padding: 0;
   }
 
@@ -37,8 +38,8 @@
     flex-flow: column;
     justify-content: space-between;
 
-    padding: 10px;
-    width: 95%;
+    // padding: 10px;
+    width: 92%;
     overflow-wrap: break-word;
   }
   &-edits {
@@ -69,7 +70,7 @@
   &-line {
     margin: 0 auto;
     height: 3px;
-    width: 90%;
+    width: 95%;
     background-color: #35383a;
     border-radius: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -78,7 +79,7 @@
     align-self: center;
     text-align: center;
     width: 89%;
-    padding: 30px;
+    padding: 25px;
     font-size: 24px;
   }
   &-label {
