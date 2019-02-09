@@ -13,30 +13,36 @@ class FullView extends Component {
   componentWillMount() {
     const id = this.props.match.params.id;
 
+    // console.log(id);
     this.props.oneEntry(id);
-    // console.log(this.props);
     // console.log(this.props.entry);
   }
 
   render() {
     const { entry } = this.props;
+    const { id } = this.props.match.params;
     console.log(entry);
     return (
       <div>
+        <Nav history={this.props.history} />
         {entry ? (
-          <div className="view_container">
-            <Nav history={this.props.history} />
-
-            <Entry
-              id={entry._id}
-              title={entry.title}
-              body={entry.content}
-              createdOn={entry.createdOn}
-              label={entry.label}
-              history={this.props.history}
-            />
-          </div>
-        ) : null}{' '}
+          entry._id === id ? (
+            <div className="view_container">
+              <Entry
+                id={entry._id}
+                title={entry.title}
+                body={entry.content}
+                createdOn={entry.createdOn}
+                label={entry.label}
+                history={this.props.history}
+              />
+            </div>
+          ) : (
+            'loading'
+          )
+        ) : (
+          'loading'
+        )}{' '}
       </div>
     );
   }
