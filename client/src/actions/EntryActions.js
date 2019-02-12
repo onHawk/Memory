@@ -33,7 +33,7 @@ export function oneEntry(id) {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
-        console.log(res);
+        // console.log(res);
 
         dispatch({ type: 'ENTRY', payload: res.data });
       })
@@ -67,7 +67,7 @@ export function deleteEntry(id, history) {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
 
         dispatch({ type: 'DELTE_ENTRY', payload: res.data });
         history.push('/home');
@@ -88,7 +88,7 @@ export function editEntry(entry, history) {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         dispatch({ type: 'EDIT_ENTRY', payload: res.data });
 
         history.push(`/entry/${id}`);

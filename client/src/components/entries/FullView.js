@@ -21,7 +21,7 @@ class FullView extends Component {
   render() {
     const { entry } = this.props;
     const { id } = this.props.match.params;
-    console.log(entry);
+    // console.log(entry);
     return (
       <div>
         <Nav history={this.props.history} />
