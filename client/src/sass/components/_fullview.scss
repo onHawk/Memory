@@ -37,7 +37,7 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    width: 95%;
+    width: 98%;
     overflow-wrap: break-word;
   }
   &-edits {
@@ -78,19 +78,20 @@
     text-align: center;
     width: 89%;
     padding: 25px;
-    font-size: 24px;
+    font-size: 26px;
   }
   &-label {
+    width: fit-content;
     padding: 5px;
     font-size: 14px;
     color: #8ed0ff;
-    margin: 2rem 0;
+    margin: 1rem;
   }
   &-body {
     margin: 0;
-    padding: 10px 5px;
-    line-height: 22px;
-    font-size: 16px;
+    padding: 12px 20px;
+    line-height: 24px;
+    font-size: 18px;
     overflow-wrap: break-word;
     white-space: pre-line;
   }
