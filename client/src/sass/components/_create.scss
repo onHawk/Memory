@@ -4,7 +4,7 @@
   background-color: #35383a;
 }
 .top {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   width: 95%;
   display: flex;
   flex-flow: row-reverse;
@@ -59,7 +59,7 @@
   }
 
   &-title {
-    width: 50%;
+    min-width: 50%;
     background-color: #faf7f0;
     border: none;
     outline: none;

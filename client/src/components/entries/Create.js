@@ -35,7 +35,7 @@ class Create extends Component {
               field="title"
               placeholder="Title..."
               autoComplete="off"
-              maxLength="12"
+              maxLength="20"
               className="create_form-title"
             />
           </div>
@@ -44,7 +44,7 @@ class Create extends Component {
               field="label"
               placeholder="#label"
               autoComplete="off"
-              maxLength="6"
+              maxLength="10"
             />
             <p>{today}</p>
           </div>
