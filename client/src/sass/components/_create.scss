@@ -54,6 +54,9 @@
     margin: 0 auto 3.5rem auto;
     border-radius: 0 0 3px 3px;
   }
+  @media screen and (max-height: 500px) {
+    margin-bottom: 1px;
+  }
 
   &-title {
     width: 50%;
