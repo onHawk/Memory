@@ -3,11 +3,12 @@ import { Form, Text, TextArea } from 'informed';
 import moment from 'moment';
 
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { createEntry } from '../../actions/EntryActions';
 import Nav from '../Nav';
 
+import { FiX } from 'react-icons/fi';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,6 +29,9 @@ class Create extends Component {
           onSubmit={values => this.handleSubmit(values)}
           className="create_form"
         >
+          <Link to="/home" className="tocancel">
+            <FiX />
+          </Link>
           <div className="top">
             <button type="submit">Save</button>
 

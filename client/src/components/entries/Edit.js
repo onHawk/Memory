@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { Form, Text, TextArea } from 'informed';
 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { editEntry, oneEntry } from '../../actions/EntryActions';
+
+import { FiX } from 'react-icons/fi';
 
 import Nav from '../Nav';
 
@@ -21,7 +24,9 @@ class Edit extends Component {
   render() {
     const { entry } = this.props;
 
-    console.log(this.props.entry);
+    const { id } = this.props.match.params;
+
+    // console.log(this.props.entry);
     return (
       <div className="create_container">
         <Nav history={this.props.history} />
@@ -31,6 +36,9 @@ class Edit extends Component {
             onSubmit={values => this.handleSubmit(values)}
             className="create_form"
           >
+            <Link to={`/entry/${id}`} className="tocancel">
+              <FiX />
+            </Link>
             <div className="top">
               <button type="submit">Save</button>
 
