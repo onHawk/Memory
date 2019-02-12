@@ -5,7 +5,7 @@
   background-color: #35383a;
 }
 .fullview {
-  margin: 0 auto 1rem 30%;
+  margin: 1rem auto 1rem 30%;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -16,8 +16,9 @@
   background-color: #faf7f0;
   // background-image: url('notebook-1920x1080.png');
   font-family: 'Yrsa', serif;
+  transition: 0.3s all;
   @media screen and (max-width: 1400px) {
-    margin: 0 auto 1rem auto;
+    margin: 1rem auto 1rem auto;
   }
   @media screen and (max-width: 1000px) {
     margin-right: 5px;
