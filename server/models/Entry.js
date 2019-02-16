@@ -13,6 +13,10 @@ const Entry = new mongoose.Schema({
     type: String,
     minlength: 2,
   },
+  img: {
+    data: Buffer,
+    contentType: String,
+  },
   createdOn: {
     type: Date,
     default: Date.now(),
