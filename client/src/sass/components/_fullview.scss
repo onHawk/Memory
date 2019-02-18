@@ -52,6 +52,9 @@
     position: sticky;
     top: 0;
     background-color: #faf7f0e1;
+    p {
+      margin: 0;
+    }
     &-button {
       cursor: pointer;
       height: 15px;
@@ -83,7 +86,6 @@
   }
   &-label {
     width: fit-content;
-    padding: 5px;
     font-size: 14px;
     color: #8ed0ff;
     margin: 1rem;
