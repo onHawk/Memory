@@ -11,6 +11,11 @@
   flex-flow: row-reverse;
   justify-content: space-between;
   align-items: center;
+
+  p {
+    font-size: 20px;
+    font-family: 'yrsa', 'sans-serif';
+  }
   &-actions {
     display: flex;
     justify-content: center;

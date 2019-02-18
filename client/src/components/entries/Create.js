@@ -19,7 +19,7 @@ class Create extends Component {
   }
 
   render() {
-    const today = moment(Date.now()).format('MMM D YYYY / hh:mm');
+    const today = moment(Date.now()).format('MMM D | hh:mm');
 
     return (
       <div className="create_container">
@@ -33,6 +33,8 @@ class Create extends Component {
             <button type="submit" className="top-actions">
               <FiPlus />
             </button>
+
+            <p>{today}</p>
 
             <Link to="/home" className="top-actions">
               <FiX />
@@ -52,7 +54,6 @@ class Create extends Component {
               autoComplete="off"
               maxLength="10"
             />
-            <p>{today}</p>
           </div>
 
           <TextArea
