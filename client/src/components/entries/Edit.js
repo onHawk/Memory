@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { editEntry, oneEntry } from '../../actions/EntryActions';
 
-import { FiX } from 'react-icons/fi';
+import { FiX, FiPlus } from 'react-icons/fi';
 
 import Nav from '../Nav';
 
@@ -36,20 +36,22 @@ class Edit extends Component {
             onSubmit={values => this.handleSubmit(values)}
             className="create_form"
           >
-            <Link to={`/entry/${id}`} className="tocancel">
-              <FiX />
-            </Link>
             <div className="top">
-              <button type="submit">Save</button>
+              <button type="submit" className="top-actions">
+                <FiPlus />
+              </button>
 
-              <Text
-                field="title"
-                autoComplete="off"
-                maxLength="12"
-                initialValue={entry.title}
-                className="create_form-title"
-              />
+              <Link to={`/entry/${id}`} className="top-actions">
+                <FiX />
+              </Link>
             </div>
+            <Text
+              field="title"
+              autoComplete="off"
+              maxLength="12"
+              initialValue={entry.title}
+              className="create_form-title"
+            />
 
             <div className="create_form-labels">
               <Text
