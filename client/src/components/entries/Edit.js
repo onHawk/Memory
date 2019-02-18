@@ -29,7 +29,7 @@ class Edit extends Component {
     // console.log(this.props.entry);
     return (
       <div className="create_container">
-        <Nav history={this.props.history} />
+        {/* <Nav history={this.props.history} /> */}
 
         {entry ? (
           <Form

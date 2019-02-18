@@ -23,7 +23,7 @@ class Create extends Component {
 
     return (
       <div className="create_container">
-        <Nav history={this.props.history} />
+        {/* <Nav history={this.props.history} /> */}
 
         <Form
           onSubmit={values => this.handleSubmit(values)}
