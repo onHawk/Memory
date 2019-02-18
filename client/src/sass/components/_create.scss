@@ -81,7 +81,9 @@
     outline: none;
     font-family: 'yrsa', 'sans-serif';
     font-size: 24px;
+    text-align: center;
     padding: 5px;
+    margin-top: 10px;
   }
   &-labels {
     width: 95%;
@@ -108,7 +110,7 @@
   }
   &-body {
     padding: 8px 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     width: 92%;
     height: 90%;
     background-color: #faf7f0;
