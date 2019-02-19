@@ -15,10 +15,7 @@ const port = process.env.PORT || 5000;
 const routes = require('./routes/');
 
 mongoose
-  .connect(
-    process.env.MONGO_DB,
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.MONGO_DB, { useNewUrlParser: true })
   .then(connect => {
     console.log('=== connected to mongo ===');
   })

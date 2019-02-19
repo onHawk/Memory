@@ -16,11 +16,19 @@ const { editEntry } = require('../controllers/entries/updateEntry');
 const { deleteEntry } = require('../controllers/entries/deleteEntry');
 /********************************************/
 
+const multer = require('multer');
+const upload = multer({ dest: './uploads/' });
+
 module.exports = server => {
   server.post('/api/register', register);
   server.post('/api/login', authenticate, login);
 
-  server.post('/api/create_page', restricted, createEntry);
+  server.post(
+    '/api/create_page',
+    upload.single('img'),
+    restricted,
+    createEntry
+  );
 
   server.get('/api/my_entries', restricted, getEntries);
   server.get('/api/entry/:id', restricted, getEntry);
