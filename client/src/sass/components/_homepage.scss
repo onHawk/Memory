@@ -96,6 +96,13 @@
     color: #35383a;
     text-decoration: none;
     font-family: 'Yrsa', serif;
+    transition: 0.5s;
+    @media screen and (min-width: 768px) {
+      &:hover {
+        transition: 0.5s;
+        height: 300px;
+      }
+    }
   }
   &-contents {
     display: flex;
@@ -109,9 +116,12 @@
       padding: 6px;
       text-overflow: ellipsis;
       p {
-        margin: 0;
+        margin-bottom: 0;
         text-overflow: ellipsis;
-        overflow: hidden;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
     &-labels {
@@ -119,6 +129,8 @@
       justify-content: space-between;
       padding: 4px;
       border-bottom: 1px solid #35383a;
+      min-height: 30px;
+      font-size: 18px;
       p {
         margin: 0;
       }

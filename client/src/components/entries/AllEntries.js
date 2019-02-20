@@ -12,7 +12,7 @@ const AllEntries = props => {
           </div>
           <p
             style={{
-              height: '110px',
+              minHeight: '110px',
               padding: '0',
             }}
           >
