@@ -11,6 +11,13 @@
   transition: 0.2s all;
   display: flex;
   justify-content: center;
+  p {
+    font-size: 26px;
+    width: fit-content;
+    margin-right: 80px;
+    font-family: 'Yrsa', serif;
+    margin: 0 81px 0 0;
+  }
 
   @media screen and (max-width: 768px) {
     margin-left: 0;
@@ -35,6 +42,13 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   justify-content: center;
+  p {
+    font-size: 26px;
+    width: fit-content;
+    margin-right: 80px;
+    font-family: 'Yrsa', serif;
+    margin: 0 81px 0 0;
+  }
   @media screen and (max-width: 768px) {
     margin-left: 0;
     p {
@@ -47,24 +61,20 @@
 /**************************************************************************/
 
 .content {
-  // align-self: flex-end;
   padding-bottom: 5px;
   display: flex;
   flex-flow: column;
-  // justify-content: space-around;
   width: 80%;
   margin: 0 auto;
-  // background-color: #35383a;
   @media screen and (max-width: 768px) {
     width: 100%;
-    // width: 100%;
+
     align-items: center;
   }
 
   &-list {
     width: 80%;
     margin: 2rem auto;
-    // border-radius: 5px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -154,7 +164,7 @@
   font-size: 45px;
   // margin: 9px 0 12px 0;
   color: #a2daff;
-  // font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 
 ::-webkit-scrollbar {

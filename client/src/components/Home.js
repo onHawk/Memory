@@ -64,15 +64,7 @@ class HomePage extends Component {
         <Nav history={this.props.history} />
 
         <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
-          <p
-            style={{
-              fontSize: '20px',
-              width: 'fit-content',
-              marginRight: '80px',
-            }}
-          >
-            {today}
-          </p>
+          <p>{today}</p>
         </div>
 
         <div className="content">
