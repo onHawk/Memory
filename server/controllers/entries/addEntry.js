@@ -13,9 +13,12 @@ const createEntry = (req, res) => {
   if (req.file) {
     // consle.log('file', req.file);
     // fs.readFileSync(req.file.path)
+    console.log('file read');
 
     entry.img.data = req.file.path;
     entry.img.contentType = req.file.mimetype;
+  } else {
+    console.log('file did not upload');
   }
 
   entry
