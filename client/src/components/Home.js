@@ -94,7 +94,7 @@ class HomePage extends Component {
             {entries ? (
               entries.map((e, i) => {
                 /**Date formatting */
-                const day = moment(e.createdOn).format('ddd');
+                const day = moment(e.createdOn).format('dddd');
                 const date = moment(e.createdOn).format('D');
                 const month = moment(e.createdOn).format('MMM');
                 /**************** */

@@ -8,17 +8,15 @@ const AllEntries = props => {
         <div className="box-contents-left">
           <div className="box-contents-labels">
             <p style={{ fontWeight: 'bold' }}>{props.title}</p>
-            <p style={{ color: '#a2daff', fontSize: '14px' }}>{props.label}</p>
+            <p style={{ color: '#a2daff', fontSize: '14px' }}>#{props.label}</p>
           </div>
           <p
             style={{
-              height: '35px',
-              overflow: 'hidden',
-              margin: '0',
+              height: '110px',
               padding: '0',
             }}
           >
-            {props.body}
+            {props.body}...
           </p>
         </div>
 
