@@ -8,7 +8,9 @@ const AllEntries = props => {
         <div className="box-contents-left">
           <div className="box-contents-labels">
             <p style={{ fontWeight: 'bold' }}>{props.title}</p>
+            {props.label ? 
             <p style={{ color: '#a2daff', fontSize: '14px' }}>#{props.label}</p>
+            : ''}
           </div>
           <p
             style={{
