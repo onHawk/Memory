@@ -4,6 +4,7 @@ import {
   CREATE_ENTRY,
   DELETE_ENTRY,
   EDIT_ENTRY,
+  SORT_NEW,
 } from '../actions/EntryActions';
 
 const initialState = {
@@ -24,7 +25,23 @@ export default function(state = initialState, action) {
       return { ...state, entries: updated };
     case EDIT_ENTRY:
       return { ...state, entry: `edited ${action.payload}` };
+    case SORT_NEW:
+      // console.log(action.payload);
+
+      return { ...state, entries: state.entries.reverse() };
     default:
       return state;
   }
 }
+
+// const newSorted = state.entries.sort((a, b) => {
+//   const aTime = moment(a.createdOn)
+//     .startOf('day')
+//     .fromNow();
+//   const bTime = moment(a.createdOn)
+//     .startOf('day')
+//     .fromNow();
+//   // console.log(bTime);
+
+//   return aTime < bTime;
+// });

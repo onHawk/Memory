@@ -1,10 +1,12 @@
 import axios from 'axios';
+import moment from 'moment';
 
 export const ENTRIES = 'ENTRIES'; // all entries
 export const ENTRY = 'ENTRY'; // one entry
 export const CREATE_ENTRY = 'CREATE_ENTRY';
 export const DELETE_ENTRY = 'DELETE_ENTRY';
 export const EDIT_ENTRY = 'EDIT_ENTRY';
+export const SORT_NEW = 'SORT_NEW';
 
 axios.defaults.headers.common.Authorization = `bearer ${localStorage.getItem(
   'id'
@@ -95,3 +97,10 @@ export function editEntry(entry, history) {
       });
   };
 }
+
+export const sortNew = () => {
+  return dispatch => {
+    // console.log(entries);
+    dispatch({ type: 'SORT_NEW' });
+  };
+};

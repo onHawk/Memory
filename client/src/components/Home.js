@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { logout } from '../actions/AuthActions';
 
-import { allEntries } from '../actions/EntryActions';
+import { allEntries, sortNew } from '../actions/EntryActions';
 
 import moment from 'moment';
 
@@ -15,6 +15,7 @@ import LastDate from './lastEntryData';
 
 // import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
 // import ReactDOM from 'react-dom';
+const today = moment(Date.now()).format('MMMM D YYYY');
 
 class HomePage extends Component {
   state = {
@@ -40,7 +41,7 @@ class HomePage extends Component {
 
     if (l) {
       const lastEntry = moment(l.createdOn).format('MMM D');
-      // console.log(l);
+
       return lastEntry;
     } else {
       return 'No entries';
@@ -48,10 +49,15 @@ class HomePage extends Component {
   }
   /*************************/
 
+  sortDate(entries) {
+    this.props.sortNew(entries);
+    this.forceUpdate();
+  }
+
   render() {
     const { entries } = this.props;
-    // console.log(user);
-    const today = moment(Date.now()).format('MMMM D YYYY');
+
+    // console.log(entries);
 
     return (
       <div
@@ -81,7 +87,13 @@ class HomePage extends Component {
             <LastDate lastDate={this.lastCreated} entries={entries} />
           </div>
 
-          {/* </div> */}
+          <div
+            style={{ maxWidth: '200px', margin: '1rem 0' }}
+            onClick={() => this.sortDate(entries)}
+          >
+            Sort new to old
+          </div>
+
           <div className="content-list">
             {entries ? (
               entries.map((e, i) => {
@@ -124,5 +136,5 @@ const mapStateToprops = state => {
 
 export default connect(
   mapStateToprops,
-  { logout, allEntries }
+  { logout, allEntries, sortNew }
 )(HomePage);
