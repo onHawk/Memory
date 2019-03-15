@@ -24,7 +24,7 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    if (this.state.sorted === true) {
+    if (this.state.sorted === false) {
       this.props.allEntries();
     }
 
