@@ -72,6 +72,22 @@
 
     align-items: center;
   }
+  &-sort {
+    display: flex;
+    align-self: flex-end;
+    text-align: center;
+    margin: 1rem;
+    padding: 3px;
+    min-width: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #35383a;
+    border-radius: 4px;
+    p {
+      font-size: 15px;
+      margin: 0 5px;
+    }
+  }
 
   &-list {
     width: 80%;

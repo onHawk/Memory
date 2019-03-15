@@ -13,7 +13,7 @@ import Entries from './entries/AllEntries';
 import Nav from './Nav';
 import LastDate from './lastEntryData';
 
-// import { TiPlusOutline, TiPencil, FaFeatherAlt } from 'react-icons/fa';
+import { FaSort } from 'react-icons/fa';
 // import ReactDOM from 'react-dom';
 const today = moment(Date.now()).format('MMMM D YYYY');
 
@@ -80,8 +80,6 @@ class HomePage extends Component {
         </div>
 
         <div className="content">
-          {/* <div> */}
-
           <div style={{ width: '100%', textAlign: 'center', fontSize: '14px' }}>
             <p style={{ color: '#a2daff' }}>
               <span style={{ fontWeight: 'bold', color: '#333333' }}>
@@ -93,11 +91,9 @@ class HomePage extends Component {
             <LastDate lastDate={this.lastCreated} entries={entries} />
           </div>
 
-          <div
-            style={{ maxWidth: '200px', margin: '1rem 0' }}
-            onClick={() => this.sortDate(entries)}
-          >
-            Sort new to old
+          <div className="content-sort" onClick={() => this.sortDate(entries)}>
+            <p>Change order</p>
+            <FaSort style={{ marginTop: '2px' }} />
           </div>
 
           <div className="content-list">
