@@ -20,10 +20,14 @@ const today = moment(Date.now()).format('MMMM D YYYY');
 class HomePage extends Component {
   state = {
     offset: 0,
+    sorted: false,
   };
 
   componentDidMount() {
-    this.props.allEntries();
+    if (this.state.sorted === true) {
+      this.props.allEntries();
+    }
+
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -51,14 +55,16 @@ class HomePage extends Component {
 
   sortDate(entries) {
     this.props.sortNew(entries);
+
+    this.setState({ sorted: true });
     this.forceUpdate();
   }
 
   render() {
-    const { entries } = this.props;
+    const { entries, usersentries } = this.props;
 
-    // console.log(entries);
-
+    // console.log(this.props.history);
+    console.log(this.state.sorted);
     return (
       <div
         style={{
@@ -95,30 +101,30 @@ class HomePage extends Component {
           </div>
 
           <div className="content-list">
-            {entries ? (
-              entries.map((e, i) => {
-                /**Date formatting */
-                const day = moment(e.createdOn).format('dddd');
-                const date = moment(e.createdOn).format('D');
-                const month = moment(e.createdOn).format('MMM');
-                /**************** */
+            {/* {entries ? ( */}
+            {entries.map((e, i) => {
+              /**Date formatting */
+              const day = moment(e.createdOn).format('dddd');
+              const date = moment(e.createdOn).format('D');
+              const month = moment(e.createdOn).format('MMM');
+              /**************** */
 
-                return (
-                  <Entries
-                    key={i}
-                    title={e.title}
-                    body={e.content}
-                    label={e.label}
-                    day={day}
-                    date={date}
-                    month={month}
-                    id={e._id}
-                  />
-                );
-              })
-            ) : (
+              return (
+                <Entries
+                  key={i}
+                  title={e.title}
+                  body={e.content}
+                  label={e.label}
+                  day={day}
+                  date={date}
+                  month={month}
+                  id={e._id}
+                />
+              );
+            })}
+            {/* ) : (
               <p> loading</p>
-            )}
+            )} */}
           </div>
         </div>
       </div>
