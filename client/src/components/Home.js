@@ -14,7 +14,7 @@ import Nav from './Nav';
 import LastDate from './lastEntryData';
 
 import { FaSort } from 'react-icons/fa';
-// import ReactDOM from 'react-dom';
+
 const today = moment(Date.now()).format('MMMM D YYYY');
 
 class HomePage extends Component {
@@ -38,8 +38,10 @@ class HomePage extends Component {
   };
 
   /** Grab last entry's date **/
-  lastCreated(ent) {
-    let l = ent[ent.length - 1];
+  lastCreated = ent => {
+    let l;
+    if (this.state.sorted === false) l = ent[ent.length - 1];
+    if (this.state.sorted === true) l = ent[0];
 
     if (l) {
       const lastEntry = moment(l.createdOn).format('MMM D');
@@ -48,7 +50,7 @@ class HomePage extends Component {
     } else {
       return 'No entries';
     }
-  }
+  };
   /*************************/
 
   sortDate(entries) {
@@ -61,7 +63,6 @@ class HomePage extends Component {
   render() {
     const { entries, usersentries } = this.props;
 
-    // console.log(this.props.history);
     console.log(this.state.sorted);
     return (
       <div
@@ -115,9 +116,6 @@ class HomePage extends Component {
                 />
               );
             })}
-            {/* ) : (
-              <p> loading</p>
-            )} */}
           </div>
         </div>
       </div>
