@@ -24,9 +24,7 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    if (this.state.sorted === false) {
-      this.props.allEntries();
-    }
+    this.props.allEntries();
 
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -77,6 +75,10 @@ class HomePage extends Component {
 
         <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
           <p>{today}</p>
+          <div className="content-sort" onClick={() => this.sortDate(entries)}>
+            <p>Change order</p>
+            <FaSort style={{ marginTop: '2px' }} />
+          </div>
         </div>
 
         <div className="content">
@@ -89,11 +91,6 @@ class HomePage extends Component {
             </p>
 
             <LastDate lastDate={this.lastCreated} entries={entries} />
-          </div>
-
-          <div className="content-sort" onClick={() => this.sortDate(entries)}>
-            <p>Change order</p>
-            <FaSort style={{ marginTop: '2px' }} />
           </div>
 
           <div className="content-list">
