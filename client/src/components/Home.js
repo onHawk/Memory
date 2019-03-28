@@ -90,6 +90,7 @@ class HomePage extends Component {
           <div>
             <p
               style={{
+                fontWeight: 'bold',
                 fontFamily: 'Yrsa, serif',
                 fontSize: '18px',
                 marginTop: '1rem',
