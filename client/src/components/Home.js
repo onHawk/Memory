@@ -75,10 +75,22 @@ class HomePage extends Component {
         <Nav history={this.props.history} />
 
         <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
+          <div className="stats">
+            <p
+              style={{
+                fontWeight: 'bold',
+                fontFamily: 'Yrsa, serif',
+              }}
+            >
+              Total entries: {entries.length}
+            </p>{' '}
+            <LastDate lastDate={this.lastCreated} entries={entries} />
+          </div>
+
           <p
             style={{
               transition: '0.2s',
-              fontSize: '30px',
+              fontSize: '25px',
               marginRight: '80px',
               fontFamily: 'Yrsa, serif',
               margin: '8px 81px 0 0',
@@ -87,19 +99,6 @@ class HomePage extends Component {
             {today}
           </p>
 
-          <div>
-            <p
-              style={{
-                fontWeight: 'bold',
-                fontFamily: 'Yrsa, serif',
-                fontSize: '18px',
-                marginTop: '1rem',
-              }}
-            >
-              Total entries: {entries.length}
-            </p>{' '}
-          </div>
-
           <div className="content-sort" onClick={() => this.sortDate(entries)}>
             <p>order</p>
             <FaSort style={{ marginTop: '2px' }} />
@@ -107,10 +106,6 @@ class HomePage extends Component {
         </div>
 
         <div className="content">
-          <div style={{ width: '100%', textAlign: 'center', fontSize: '14px' }}>
-            <LastDate lastDate={this.lastCreated} entries={entries} />
-          </div>
-
           <div className="content-list">
             {/* {entries ? ( */}
             {entries.map((e, i) => {

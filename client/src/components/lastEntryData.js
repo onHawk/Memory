@@ -8,14 +8,13 @@ const LastDate = props => {
     <p
       style={{
         fontFamily: 'Yrsa, serif',
-        fontSize: '17px',
+
         fontWeight: 'bold',
       }}
     >
       <span
         style={{
           color: '#333333',
-          fontSize: '18px',
         }}
       >
         {' '}
