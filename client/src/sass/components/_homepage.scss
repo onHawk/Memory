@@ -111,12 +111,6 @@
     text-decoration: none;
     font-family: 'Yrsa', serif;
     transition: 0.5s;
-    @media screen and (min-width: 768px) {
-      &:hover {
-        transition: 0.5s;
-        height: 300px;
-      }
-    }
   }
   &-contents {
     display: flex;
