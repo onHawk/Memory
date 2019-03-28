@@ -77,7 +77,7 @@ class HomePage extends Component {
         <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
           <p>{today}</p>
           <div className="content-sort" onClick={() => this.sortDate(entries)}>
-            <p>Change order</p>
+            <p>order</p>
             <FaSort style={{ marginTop: '2px' }} />
           </div>
         </div>
