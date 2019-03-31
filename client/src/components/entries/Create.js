@@ -34,7 +34,7 @@ class Create extends Component {
               <FiPlus />
             </button>
 
-            <p>{today}</p>
+            <p style={{ margin: '0' }}>{today}</p>
 
             <Link to="/home" className="top-actions">
               <FiX />
