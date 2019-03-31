@@ -6,7 +6,6 @@
 /*** Form nav ***/
 .top {
   width: 100%;
-  padding-top: 5px;
   display: flex;
   flex-flow: row-reverse;
   justify-content: space-between;
@@ -20,12 +19,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin: 5px 10px;
     color: #35383a;
     font-size: 24px;
     width: 60px;
     height: 45px;
-    // padding-top: 5px;
     transition: 0.3s all;
     &:hover {
       transition: 0.3s all;
@@ -54,7 +51,6 @@
 
 .create_form {
   margin: 1rem auto 1rem 30%;
-  // padding: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -88,12 +84,12 @@
     font-size: 24px;
     text-align: center;
     padding: 5px;
-    margin-top: 10px;
   }
+
   &-labels {
     width: 95%;
     display: flex;
-    margin: 15px 0;
+    margin: 0;
     text-align: center;
 
     input {

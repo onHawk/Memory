@@ -74,7 +74,7 @@ class HomePage extends Component {
       >
         <Nav history={this.props.history} />
 
-        <div className={this.state.offset === 0 ? 'no_shadow' : 'shadow'}>
+        <div className={this.state.offset <= 0 ? 'no_shadow' : 'shadow'}>
           <div className="stats">
             <p
               style={{
