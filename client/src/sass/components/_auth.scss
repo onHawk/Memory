@@ -5,11 +5,14 @@
   &-fields {
     height: 55px;
     // width: 100px;
-    margin-bottom: 5px;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
     font-family: 'Yrsa', serif;
+    label {
+      margin-bottom: 5px;
+    }
     input {
       width: 250px;
 
